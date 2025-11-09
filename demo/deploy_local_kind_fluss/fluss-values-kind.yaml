@@ -1,0 +1,8 @@
+persistence:
+  enabled: false
+image:
+  registry: docker.io
+  repository: apache/fluss
+  tag: 0.8.0-incubating
+configurationOverrides:
+  "zookeeper.address": zk-svc.default.svc.cluster.local:2181
