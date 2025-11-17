@@ -90,3 +90,13 @@ java --add-opens=java.base/java.nio=ALL-UNNAMED \
   com.example.fluss.inspect.FlussPrimaryKeySnapshotPeek localhost:9123 iot sensor_readings 5
 ```
 (Reads current table snapshot; only supports non-partitioned primary-key tables.)
+
+## 6. Flink aggregation job
+
+(Requires Flink cluster running in `flink-1.20.3`)
+```
+flink-1.20.3/bin/flink run \
+  -c com.example.fluss.flink.FlinkSensorAggregatorJob \
+  demos/demo/fluss_flink_realtime_demo/target/fluss-flink-realtime-demo.jar \
+  --bootstrap localhost:9123 --database iot --table sensor_readings --window-minutes 1
+```

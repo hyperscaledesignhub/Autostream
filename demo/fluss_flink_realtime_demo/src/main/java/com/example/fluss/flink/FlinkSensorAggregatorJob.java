@@ -18,6 +18,7 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 import org.apache.flink.table.data.StringData;
 import org.apache.flink.table.data.TimestampData;
 import org.apache.flink.types.Row;
+import org.apache.flink.types.RowKind;
 import org.apache.flink.util.Collector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,7 +59,13 @@ public final class FlinkSensorAggregatorJob {
         tEnv.executeSql("USE " + options.database);
 
         Table sourceTable = tEnv.from(options.table);
-        DataStream<Row> rowStream = tEnv.toDataStream(sourceTable);
+        DataStream<Row> changelogStream = tEnv.toChangelogStream(sourceTable);
+
+        // Filter for only INSERT and UPDATE_AFTER events (ignore UPDATE_BEFORE and DELETE)
+        DataStream<Row> rowStream = changelogStream.filter(row -> {
+            RowKind kind = row.getKind();
+            return kind == RowKind.INSERT || kind == RowKind.UPDATE_AFTER;
+        });
 
         DataStream<SensorReading> sensorStream = rowStream.map(FlinkSensorAggregatorJob::toSensorReading);
 
@@ -169,17 +176,35 @@ public final class FlinkSensorAggregatorJob {
         }
     }
 
-    private record SensorReading(
-            String sensorId,
-            String sensorType,
-            String location,
-            double temperature,
-            double humidity,
-            double pressure,
-            double batteryLevel,
-            String status,
-            Instant eventTime,
-            SensorData.MetaData metadata) {}
+    private static class SensorReading implements java.io.Serializable {
+        private static final long serialVersionUID = 1L;
+        final String sensorId;
+        final String sensorType;
+        final String location;
+        final double temperature;
+        final double humidity;
+        final double pressure;
+        final double batteryLevel;
+        final String status;
+        final Instant eventTime;
+        final SensorData.MetaData metadata;
+
+        SensorReading(String sensorId, String sensorType, String location,
+                     double temperature, double humidity, double pressure,
+                     double batteryLevel, String status, Instant eventTime,
+                     SensorData.MetaData metadata) {
+            this.sensorId = sensorId;
+            this.sensorType = sensorType;
+            this.location = location;
+            this.temperature = temperature;
+            this.humidity = humidity;
+            this.pressure = pressure;
+            this.batteryLevel = batteryLevel;
+            this.status = status;
+            this.eventTime = eventTime;
+            this.metadata = metadata;
+        }
+    }
 
     private static class SensorAggregateFunction
             implements AggregateFunction<SensorReading, SensorAccumulator, SensorAccumulator> {
@@ -317,7 +342,8 @@ public final class FlinkSensorAggregatorJob {
         }
     }
 
-    private static final class SensorAccumulator {
+    private static final class SensorAccumulator implements java.io.Serializable {
+        private static final long serialVersionUID = 1L;
         private String sensorId;
         private String sensorType;
         private String location;
@@ -344,27 +370,58 @@ public final class FlinkSensorAggregatorJob {
         private String latestStatus;
     }
 
-    private record SensorAggregate(
-            String sensorId,
-            String sensorType,
-            String location,
-            long windowStart,
-            long windowEnd,
-            double avgTemperature,
-            double minTemperature,
-            double maxTemperature,
-            double avgHumidity,
-            double minHumidity,
-            double maxHumidity,
-            double avgPressure,
-            double minPressure,
-            double maxPressure,
-            double avgBatteryLevel,
-            double minBatteryLevel,
-            double maxBatteryLevel,
-            String latestStatus,
-            long latestEventTime,
-            SensorData.MetaData metadata) {
+    private static class SensorAggregate implements java.io.Serializable {
+        private static final long serialVersionUID = 1L;
+        final String sensorId;
+        final String sensorType;
+        final String location;
+        final long windowStart;
+        final long windowEnd;
+        final double avgTemperature;
+        final double minTemperature;
+        final double maxTemperature;
+        final double avgHumidity;
+        final double minHumidity;
+        final double maxHumidity;
+        final double avgPressure;
+        final double minPressure;
+        final double maxPressure;
+        final double avgBatteryLevel;
+        final double minBatteryLevel;
+        final double maxBatteryLevel;
+        final String latestStatus;
+        final long latestEventTime;
+        final SensorData.MetaData metadata;
+
+        SensorAggregate(String sensorId, String sensorType, String location,
+                       long windowStart, long windowEnd,
+                       double avgTemperature, double minTemperature, double maxTemperature,
+                       double avgHumidity, double minHumidity, double maxHumidity,
+                       double avgPressure, double minPressure, double maxPressure,
+                       double avgBatteryLevel, double minBatteryLevel, double maxBatteryLevel,
+                       String latestStatus, long latestEventTime, SensorData.MetaData metadata) {
+            this.sensorId = sensorId;
+            this.sensorType = sensorType;
+            this.location = location;
+            this.windowStart = windowStart;
+            this.windowEnd = windowEnd;
+            this.avgTemperature = avgTemperature;
+            this.minTemperature = minTemperature;
+            this.maxTemperature = maxTemperature;
+            this.avgHumidity = avgHumidity;
+            this.minHumidity = minHumidity;
+            this.maxHumidity = maxHumidity;
+            this.avgPressure = avgPressure;
+            this.minPressure = minPressure;
+            this.maxPressure = maxPressure;
+            this.avgBatteryLevel = avgBatteryLevel;
+            this.minBatteryLevel = minBatteryLevel;
+            this.maxBatteryLevel = maxBatteryLevel;
+            this.latestStatus = latestStatus;
+            this.latestEventTime = latestEventTime;
+            this.metadata = metadata;
+        }
+
         @Override
         public String toString() {
             return String.format(
