@@ -38,7 +38,19 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class FlussSensorProducerApp {
     private static final Logger LOG = LoggerFactory.getLogger(FlussSensorProducerApp.class);
 
+    // Set IPv4-only properties in static initializer to ensure they're set before any class loading
+    static {
+        System.setProperty("java.net.preferIPv4Stack", "true");
+        System.setProperty("java.net.preferIPv4Addresses", "true");
+        // Disable IPv6 completely
+        System.setProperty("java.net.useSystemProxies", "false");
+    }
+
     public static void main(String[] args) throws Exception {
+        // Ensure IPv4 properties are set (redundant but safe)
+        System.setProperty("java.net.preferIPv4Stack", "true");
+        System.setProperty("java.net.preferIPv4Addresses", "true");
+        
         ProducerOptions options = ProducerOptions.parse(args);
         LOG.info("Starting Fluss producer with options: {}", options);
 
