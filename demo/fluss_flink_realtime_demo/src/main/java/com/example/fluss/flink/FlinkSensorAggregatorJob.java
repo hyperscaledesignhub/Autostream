@@ -37,7 +37,17 @@ import java.util.Objects;
 public final class FlinkSensorAggregatorJob {
     private static final Logger LOG = LoggerFactory.getLogger(FlinkSensorAggregatorJob.class);
 
+    // Set IPv4-only properties in static initializer to ensure they're set before any class loading
+    static {
+        System.setProperty("java.net.preferIPv4Stack", "true");
+        System.setProperty("java.net.preferIPv4Addresses", "true");
+    }
+
     public static void main(String[] args) throws Exception {
+        // Ensure IPv4 properties are set
+        System.setProperty("java.net.preferIPv4Stack", "true");
+        System.setProperty("java.net.preferIPv4Addresses", "true");
+        
         JobOptions options = JobOptions.parse(args);
         LOG.info("Starting Flink aggregation job with options: {}", options);
 
