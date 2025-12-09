@@ -1,0 +1,17 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.tfvars.backup
+
+# Helm charts (downloaded)
+helm-charts/fluss/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+

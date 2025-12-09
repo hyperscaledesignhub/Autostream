@@ -1,0 +1,91 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fluss-producer
+  namespace: ${NAMESPACE}
+  labels:
+    app: fluss-producer
+spec:
+  backoffLimit: 0
+  completions: 1
+  parallelism: 1
+  ttlSecondsAfterFinished: 86400
+  template:
+    metadata:
+      labels:
+        app: fluss-producer
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/metrics"
+    spec:
+      restartPolicy: Never
+      initContainers:
+        - name: wait-for-fluss
+          image: busybox:1.36
+          command:
+            - sh
+            - -c
+            - |
+              echo "Waiting for Fluss coordinator to be ready..."
+              # Check if the port is open using nc (this will also verify DNS resolution)
+              until nc -zv coordinator-server-hs.fluss.svc.cluster.local 9124 2>&1 | grep -q "open"; do
+                echo "Waiting for Fluss coordinator on coordinator-server-hs.fluss.svc.cluster.local:9124..."
+                sleep 2
+              done
+              echo "Fluss coordinator is ready!"
+      containers:
+        - name: producer
+          image: ${DEMO_IMAGE_REPO}:${DEMO_IMAGE_TAG}
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            runAsUser: 0
+          env:
+            - name: PRODUCER_RATE
+              value: "${PRODUCER_RATE}"
+            - name: PRODUCER_FLUSH_EVERY
+              value: "${PRODUCER_FLUSH_EVERY}"
+            - name: PRODUCER_STATS_EVERY
+              value: "${PRODUCER_STATS_EVERY}"
+          command:
+            - java
+          args:
+            - -jar
+            - /opt/flink/usrlib/fluss-flink-realtime-demo.jar
+            - --bootstrap
+            - ${BOOTSTRAP}
+            - --database
+            - ${DATABASE}
+            - --table
+            - ${TABLE}
+            - --buckets
+            - "${BUCKETS}"
+          ports:
+            - name: metrics
+              containerPort: 8080
+              protocol: TCP
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "200m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fluss-producer-metrics
+  namespace: ${NAMESPACE}
+  labels:
+    app: fluss-producer
+spec:
+  selector:
+    app: fluss-producer
+  ports:
+    - name: metrics
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+  type: ClusterIP
+

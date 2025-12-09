@@ -1,0 +1,32 @@
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on monitoring.tf line 140, in resource "kubernetes_manifest" "fluss_coordinator_servicemonitor":
+[31m│[0m [0m 140:   [4mserver_side_apply[0m = true[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "server_side_apply" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on monitoring.tf line 176, in resource "kubernetes_manifest" "fluss_tablet_servicemonitor":
+[31m│[0m [0m 176:   [4mserver_side_apply[0m = true[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "server_side_apply" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on monitoring.tf line 212, in resource "kubernetes_manifest" "flink_aggregator_podmonitor":
+[31m│[0m [0m 212:   [4mserver_side_apply[0m = true[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "server_side_apply" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on monitoring.tf line 248, in resource "kubernetes_manifest" "producer_podmonitor":
+[31m│[0m [0m 248:   [4mserver_side_apply[0m = true[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "server_side_apply" is not expected here.
+[31m╵[0m[0m

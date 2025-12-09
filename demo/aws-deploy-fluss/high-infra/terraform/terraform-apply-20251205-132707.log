@@ -1,0 +1,436 @@
+[0m[1mmodule.eks.aws_cloudwatch_log_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_vpc.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_cloudwatch_log_group.this[0]: Creation complete after 2s [id=/aws/eks/fluss-eks-cluster/cluster][0m
+[0m[1mmodule.eks.aws_iam_role.this[0]: Creation complete after 2s [id=fluss-eks-cluster-cluster-20251205075709741700000001][0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSVPCResourceController"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.kms.data.aws_iam_policy_document.this[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.kms.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=2298828623][0m
+[0m[1mmodule.eks.module.kms.aws_kms_key.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSVPCResourceController"]: Creation complete after 1s [id=fluss-eks-cluster-cluster-20251205075709741700000001-20251205075712462000000002][0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Creation complete after 1s [id=fluss-eks-cluster-cluster-20251205075709741700000001-20251205075712732200000003][0m
+[0m[1mmodule.vpc.aws_vpc.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.kms.aws_kms_key.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_vpc.this[0]: Creation complete after 15s [id=vpc-026ccb51804f296fa][0m
+[0m[1mmodule.vpc.aws_default_route_table.default[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table.private[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_internet_gateway.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group.cluster[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_security_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table.public[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_network_acl.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_route_table.default[0]: Creation complete after 2s [id=rtb-073df12dc29afe6d2][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_internet_gateway.this[0]: Creation complete after 2s [id=igw-0383e3d2b2a436869][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Creation complete after 2s [id=subnet-0b7c3fdb2f9b23dc4][0m
+[0m[1mmodule.eks.aws_security_group.node[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table.public[0]: Creation complete after 2s [id=rtb-0946b5b98b08f9a1e][0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Creation complete after 2s [id=subnet-02c7759ad7217cf75][0m
+[0m[1mmodule.vpc.aws_route.public_internet_gateway[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table.private[0]: Creation complete after 3s [id=rtb-0677e3debd1d70c64][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Creation complete after 1s [id=subnet-0f11fa630ddc2b3c3][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Creation complete after 1s [id=subnet-02aea45409baf7083][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Creation complete after 1s [id=rtbassoc-04144962eafdef470][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Creation complete after 2s [id=eipalloc-0eda1bbb882b78bd0][0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_security_group.this[0]: Creation complete after 4s [id=sg-0c07f4650a3aa8573][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_network_acl.this[0]: Creation complete after 4s [id=acl-02b0fda14f0546613][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route.public_internet_gateway[0]: Creation complete after 2s [id=r-rtb-0946b5b98b08f9a1e1080289494][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group.cluster[0]: Creation complete after 4s [id=sg-0a70e5f936602d0fb][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-08a44cd2974d6c46f][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Creation complete after 1s [id=rtbassoc-065c61a0250b49700][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Creation complete after 1s [id=rtbassoc-030ce26500f82823e][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role.this[0]: Creation complete after 1s [id=flink-jobmanager-eks-node-group-2025120507572902660000000a][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role.this[0]: Creation complete after 1s [id=producer-eks-node-group-2025120507572905760000000b][0m
+[0m[1mmodule.eks.aws_security_group.node[0]: Creation complete after 3s [id=sg-07e86db980c92e11b][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_443"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role.this[0]: Creation complete after 1s [id=coordinator-eks-node-group-20251205075729004100000009][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role.this[0]: Creation complete after 2s [id=flink-taskmanager-eks-node-group-2025120507572945960000000c][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role.this[0]: Creation complete after 2s [id=tablet-server-eks-node-group-2025120507572950270000000d][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Creation complete after 2s [id=sgrule-228354790][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.kms.aws_kms_key.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Creation complete after 3s [id=sgrule-3302886768][0m
+[0m[1mmodule.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Creation complete after 1s [id=sgrule-872975872][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_443"]: Creation complete after 4s [id=sgrule-1200242736][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 1s [id=producer-eks-node-group-2025120507572905760000000b-2025120507573462650000000e][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 1s [id=tablet-server-eks-node-group-2025120507572950270000000d-2025120507573524900000000f][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Creation complete after 6s [id=sgrule-3005416090][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 0s [id=flink-taskmanager-eks-node-group-2025120507572945960000000c-20251205075735854800000010][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 0s [id=coordinator-eks-node-group-20251205075729004100000009-20251205075735980200000011][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 1s [id=flink-jobmanager-eks-node-group-2025120507572902660000000a-20251205075736530200000012][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 1s [id=flink-taskmanager-eks-node-group-2025120507572945960000000c-20251205075736585200000013][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 1s [id=tablet-server-eks-node-group-2025120507572950270000000d-20251205075737253400000015][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creation complete after 1s [id=tablet-server-eks-node-group-2025120507572950270000000d-20251205075737253400000014][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creation complete after 0s [id=flink-taskmanager-eks-node-group-2025120507572945960000000c-20251205075737849900000016][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creation complete after 0s [id=producer-eks-node-group-2025120507572905760000000b-20251205075737869200000017][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creation complete after 1s [id=coordinator-eks-node-group-20251205075729004100000009-20251205075738500600000018][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creation complete after 1s [id=coordinator-eks-node-group-20251205075729004100000009-20251205075738619200000019][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 0s [id=producer-eks-node-group-2025120507572905760000000b-2025120507573912420000001a][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creation complete after 1s [id=flink-jobmanager-eks-node-group-2025120507572902660000000a-2025120507573922880000001b][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.kms.aws_kms_key.this[0]: Creation complete after 28s [id=c3a045fd-ba64-410a-9e7e-607b6c5ae032][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 1s [id=flink-jobmanager-eks-node-group-2025120507572902660000000a-2025120507573970610000001c][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creation complete after 0s [id=producer-eks-node-group-2025120507572905760000000b-2025120507573987230000001d][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creation complete after 0s [id=tablet-server-eks-node-group-2025120507572950270000000d-2025120507574019250000001e][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 1s [id=coordinator-eks-node-group-20251205075729004100000009-2025120507574039890000001f][0m
+[0m[1mmodule.eks.module.kms.aws_kms_alias.this["cluster"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creation complete after 1s [id=flink-jobmanager-eks-node-group-2025120507572902660000000a-20251205075740496600000020][0m
+[0m[1mmodule.eks.aws_iam_policy.cluster_encryption[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creation complete after 0s [id=flink-taskmanager-eks-node-group-2025120507572945960000000c-20251205075740806600000021][0m
+[0m[1mmodule.eks.module.kms.aws_kms_alias.this["cluster"]: Creation complete after 0s [id=alias/eks/fluss-eks-cluster][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_iam_policy.cluster_encryption[0]: Creation complete after 1s [id=arn:aws:iam::343218179954:policy/fluss-eks-cluster-cluster-ClusterEncryption20251205075740810600000022][0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Creation complete after 0s [id=fluss-eks-cluster-cluster-20251205075709741700000001-20251205075742069000000023][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Still creating... [41s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Still creating... [51s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Still creating... [1m1s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Still creating... [1m11s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Still creating... [1m21s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Creation complete after 1m28s [id=nat-06597df07d55a79ac][0m
+[0m[1mmodule.vpc.aws_route.private_nat_gateway[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route.private_nat_gateway[0]: Creation complete after 2s [id=r-rtb-0677e3debd1d70c641080289494][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Still creating... [1m31s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Creation complete after 1m37s [id=sgrule-1711453277][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Creation complete after 1m38s [id=sgrule-3554321780][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Creation complete after 1m39s [id=sgrule-1469169819][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Creation complete after 1m40s [id=sgrule-3122879537][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Creation complete after 1m41s [id=sgrule-3260880818][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Creation complete after 1m40s [id=sgrule-3615633745][0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Creation complete after 9m47s [id=fluss-eks-cluster][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["coredns"]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...[0m[0m
+[0m[1mmodule.eks.data.tls_certificate.this[0]: Reading...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Creating...[0m[0m
+[0m[1mmodule.eks.time_sleep.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 0s [id=coredns][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 1s [id=kube-proxy][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 1s [id=vpc-cni][0m
+[0m[1mmodule.eks.data.tls_certificate.this[0]: Read complete after 1s [id=4687b9863b4f2caa907e2ad6c9ffcf73433dc367][0m
+[0m[1mmodule.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Creation complete after 1s [id=sg-0a48ee383593e22e7,Environment][0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"]: Creation complete after 2s [id=sg-0a48ee383593e22e7,ManagedBy][0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Creation complete after 2s [id=sg-0a48ee383593e22e7,Project][0m
+[0m[1mmodule.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Creation complete after 1s [id=arn:aws:iam::343218179954:oidc-provider/oidc.eks.us-west-2.amazonaws.com/id/DC1CCB4CB8F02920909B26C24F989D5F][0m
+[0m[1mmodule.eks.time_sleep.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.time_sleep.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.time_sleep.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.time_sleep.this[0]: Creation complete after 30s [id=2025-12-05T08:09:30Z][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_launch_template.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_launch_template.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_launch_template.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_launch_template.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_launch_template.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_launch_template.this[0]: Creation complete after 7s [id=lt-01ef764d4ec270592][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_launch_template.this[0]: Creation complete after 8s [id=lt-0f9c05fb668fd3f88][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_launch_template.this[0]: Creation complete after 8s [id=lt-01ef45fa394d3f680][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_launch_template.this[0]: Creation complete after 8s [id=lt-0ae3f1c320c5cff1d][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_launch_template.this[0]: Creation complete after 8s [id=lt-053fe0d04faa34b8a][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Creation complete after 1m33s [id=fluss-eks-cluster:producer-2025120508093928920000002e][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Creation complete after 1m42s [id=fluss-eks-cluster:flink-jobmanager-20251205080939289300000032][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Creation complete after 1m53s [id=fluss-eks-cluster:flink-taskmanager-20251205080939289200000030][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Creation complete after 1m53s [id=fluss-eks-cluster:coordinator-20251205080939289500000034][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Creation complete after 1m55s [id=fluss-eks-cluster:tablet-server-20251205080939289500000036][0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Creating...[0m[0m
+[0m[1mmodule.eks.kubernetes_config_map_v1_data.aws_auth[0]: Creating...[0m[0m
+[0m[1mmodule.eks.kubernetes_config_map_v1_data.aws_auth[0]: Creation complete after 2s [id=kube-system/aws-auth][0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Creation complete after 27s [id=fluss-eks-cluster:kube-proxy][0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Creation complete after 38s [id=fluss-eks-cluster:coredns][0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Creation complete after 1m9s [id=fluss-eks-cluster:vpc-cni][0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_region.current: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_region.current: Read complete after 0s [id=us-west-2][0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_iam_policy_document.ebs_csi[0]: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_iam_policy_document.ebs_csi[0]: Read complete after 0s [id=4189668531][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_policy.ebs_csi[0]: Creating...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_caller_identity.current: Read complete after 1s [id=343218179954][0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_iam_policy_document.this[0]: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_iam_policy_document.this[0]: Read complete after 0s [id=3284234827][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_policy.ebs_csi[0]: Creation complete after 2s [id=arn:aws:iam::343218179954:policy/AmazonEKS_EBS_CSI_Policy-2025120508124320100000003b][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role.this[0]: Creation complete after 2s [id=fluss-eks-cluster-ebs-csi-driver][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role_policy_attachment.ebs_csi[0]: Creating...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role_policy_attachment.ebs_csi[0]: Creation complete after 1s [id=fluss-eks-cluster-ebs-csi-driver-2025120508124639170000003c][0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Creating...[0m[0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Still creating... [10s elapsed][0m[0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Still creating... [20s elapsed][0m[0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Still creating... [30s elapsed][0m[0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Still creating... [40s elapsed][0m[0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Creation complete after 48s [id=fluss-eks-cluster:aws-ebs-csi-driver][0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mArgument is deprecated[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  with module.eks.aws_iam_role.this[0],
+[33m│[0m [0m  on .terraform/modules/eks/main.tf line 293, in resource "aws_iam_role" "this":
+[33m│[0m [0m 293: resource "aws_iam_role" "this" [4m{[0m[0m
+[33m│[0m [0m
+[33m│[0m [0minline_policy is deprecated. Use the aws_iam_role_policy resource instead.
+[33m│[0m [0mIf Terraform should exclusively manage all inline policy associations (the
+[33m│[0m [0mcurrent behavior of this argument), use the aws_iam_role_policies_exclusive
+[33m│[0m [0mresource as well.
+[33m│[0m [0m
+[33m│[0m [0m(and 3 more similar warnings elsewhere)
+[33m╵[0m[0m
+[0m[1m[32m
+Apply complete! Resources: 89 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0mcoordinator_node_group_id = "fluss-eks-cluster:coordinator-20251205080939289500000034"
+demo_image_repository = "343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss-demo"
+ebs_csi_driver_installed = true
+ebs_csi_driver_role_arn = "arn:aws:iam::343218179954:role/fluss-eks-cluster-ebs-csi-driver"
+eks_cluster_endpoint = "https://DC1CCB4CB8F02920909B26C24F989D5F.gr7.us-west-2.eks.amazonaws.com"
+eks_cluster_name = "fluss-eks-cluster"
+fluss_coordinator_service = "coordinator-server-hs.fluss.svc.cluster.local:9124"
+fluss_image_repository = "343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss"
+grafana_credentials = "Username: admin, Password: admin123"
+grafana_url = "Access Grafana via: kubectl port-forward -n monitoring svc/prometheus-grafana 3000:80"
+monitoring_namespace = "monitoring"
+namespace = "fluss"
+private_subnet_ids = [
+  "subnet-0b7c3fdb2f9b23dc4",
+  "subnet-02c7759ad7217cf75",
+]
+prometheus_url = "http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090"
+public_subnet_ids = [
+  "subnet-0f11fa630ddc2b3c3",
+  "subnet-02aea45409baf7083",
+]
+tablet_server_node_group_id = "fluss-eks-cluster:tablet-server-20251205080939289500000036"
+vpc_id = "vpc-026ccb51804f296fa"
+zookeeper_service = "zk-svc.fluss.svc.cluster.local:2181"

@@ -1,0 +1,144 @@
+variable "aws_region" {
+  description = "AWS region for resources"
+  type        = string
+  default     = "us-west-2"
+}
+
+variable "environment" {
+  description = "Environment name (dev, staging, prod)"
+  type        = string
+  default     = "dev"
+}
+
+variable "eks_cluster_name" {
+  description = "Name of the EKS cluster to create"
+  type        = string
+  default     = "fluss-eks-cluster"
+}
+
+variable "kubernetes_version" {
+  description = "Kubernetes version for EKS cluster"
+  type        = string
+  default     = "1.28"
+}
+
+variable "namespace" {
+  description = "Kubernetes namespace for Fluss deployment"
+  type        = string
+  default     = "fluss"
+}
+
+variable "fluss_version" {
+  description = "Fluss version to deploy"
+  type        = string
+  default     = "0.8.0-incubating"
+}
+
+variable "fluss_image_repository" {
+  description = "Fluss Docker image repository (ECR URL or Docker Hub)"
+  type        = string
+  default     = "" # Will be set to ECR URL if use_ecr_for_fluss is true
+}
+
+variable "use_ecr_for_fluss" {
+  description = "Use ECR repository for Fluss image instead of Docker Hub"
+  type        = bool
+  default     = true
+}
+
+variable "demo_image_repository" {
+  description = "ECR repository for demo application image (fluss-demo)"
+  type        = string
+  default     = ""
+}
+
+variable "demo_image_tag" {
+  description = "Tag for demo application image"
+  type        = string
+  default     = "latest"
+}
+
+variable "zookeeper_replicas" {
+  description = "Number of ZooKeeper replicas"
+  type        = number
+  default     = 1
+}
+
+variable "coordinator_replicas" {
+  description = "Number of Fluss coordinator replicas"
+  type        = number
+  default     = 1
+}
+
+variable "tablet_server_replicas" {
+  description = "Number of Fluss tablet server replicas"
+  type        = number
+  default     = 3
+}
+
+variable "enable_persistence" {
+  description = "Enable persistent volumes for Fluss. If false, uses root volume (emptyDir). If true, requires EBS CSI driver."
+  type        = bool
+  default     = false
+}
+
+variable "install_ebs_csi_driver" {
+  description = "Install EBS CSI driver addon (required for gp3 PersistentVolumes if enable_persistence = true)"
+  type        = bool
+  default     = true
+}
+
+variable "storage_class" {
+  description = "Storage class for persistent volumes"
+  type        = string
+  default     = "gp3"
+}
+
+variable "storage_size" {
+  description = "Storage size for persistent volumes (e.g., 20Gi)"
+  type        = string
+  default     = "20Gi"
+}
+
+variable "coordinator_instance_type" {
+  description = "EC2 instance type for Fluss coordinator"
+  type        = string
+  default     = "t3.medium"
+}
+
+variable "tablet_server_instance_type" {
+  description = "EC2 instance type for Fluss tablet servers"
+  type        = string
+  default     = "t3.medium"
+}
+
+variable "coordinator_instance_count" {
+  description = "Number of coordinator instances"
+  type        = number
+  default     = 1
+}
+
+variable "tablet_server_instance_count" {
+  description = "Number of tablet server instances"
+  type        = number
+  default     = 3
+}
+
+variable "key_name" {
+  description = "AWS Key Pair name for EC2 instances"
+  type        = string
+  default     = ""
+}
+
+variable "subnet_ids" {
+  description = "List of subnet IDs for EC2 instances (should be private subnets)"
+  type        = list(string)
+  default     = []
+}
+
+variable "security_group_ids" {
+  description = "List of security group IDs for EC2 instances"
+  type        = list(string)
+  default     = []
+}
+

@@ -1,0 +1,55 @@
+# PodMonitor for Producer pods (if ServiceMonitor doesn't work)
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: fluss-producer-pods
+  namespace: fluss
+  labels:
+    app: fluss-producer
+spec:
+  selector:
+    matchLabels:
+      app: fluss-producer
+  podMetricsEndpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
+---
+# PodMonitor for Flink JobManager pods
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: flink-jobmanager-pods
+  namespace: fluss
+  labels:
+    app: flink
+    component: jobmanager
+spec:
+  selector:
+    matchLabels:
+      app: flink
+      component: jobmanager
+  podMetricsEndpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
+---
+# PodMonitor for Flink TaskManager pods
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: flink-taskmanager-pods
+  namespace: fluss
+  labels:
+    app: flink
+    component: taskmanager
+spec:
+  selector:
+    matchLabels:
+      app: flink
+      component: taskmanager
+  podMetricsEndpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
+
