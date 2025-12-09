@@ -213,7 +213,7 @@ FlussAggregatorSink (log aggregated results)
 
 The following diagrams show detailed performance metrics from the 2 million rows per second benchmark run. Each diagram includes explanations of what it measures and what to look for.
 
-### 10. Deployment Diagram
+### Deployment Diagram
 
 ![Deployment Architecture](bench-mark/10-Fluss%20Deployment.png)
 
