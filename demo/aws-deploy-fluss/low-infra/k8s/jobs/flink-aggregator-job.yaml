@@ -1,0 +1,8 @@
+# NOTE: This file is deprecated - use flink-job-submission-simple.yaml instead
+# The Flink aggregator should be submitted as a job to the Flink cluster,
+# not run as a standalone application.
+# 
+# To submit the job, use:
+# kubectl apply -f flink/flink-job-submission-simple.yaml
+# (after setting DEMO_IMAGE_REPOSITORY and DEMO_IMAGE_TAG environment variables)
+

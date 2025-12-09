@@ -1,0 +1,107 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flink-jobmanager
+  namespace: fluss
+  labels:
+    app: flink
+    component: jobmanager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flink
+      component: jobmanager
+  template:
+    metadata:
+      labels:
+        app: flink
+        component: jobmanager
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9249"
+        prometheus.io/path: "/metrics"
+    spec:
+      nodeSelector:
+        flink-component: jobmanager
+      tolerations:
+        - key: "flink-component"
+          operator: "Equal"
+          value: "jobmanager"
+          effect: "NoSchedule"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: flink-component
+                    operator: In
+                    values:
+                      - jobmanager
+      containers:
+        - name: jobmanager
+          image: 343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss-demo:latest
+          imagePullPolicy: Always
+          command: ["/opt/flink/bin/jobmanager.sh"]
+          args: ["start-foreground"]
+          env:
+            - name: FLINK_PROPERTIES
+              value: "jobmanager.rpc.address: flink-jobmanager"
+            - name: JAVA_TOOL_OPTIONS
+              value: "--add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED"
+          ports:
+            - name: rpc
+              containerPort: 6123
+            - name: blob-server
+              containerPort: 6124
+            - name: queryable-state
+              containerPort: 6125
+            - name: webui
+              containerPort: 8081
+            - name: metrics
+              containerPort: 9249
+          volumeMounts:
+            - name: flink-config
+              mountPath: /opt/flink/conf
+          resources:
+            requests:
+              memory: "1.5Gi"
+              cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+      volumes:
+        - name: flink-config
+          configMap:
+            name: flink-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flink-jobmanager
+  namespace: fluss
+  labels:
+    app: flink
+    component: jobmanager
+spec:
+  type: ClusterIP
+  ports:
+    - name: rpc
+      port: 6123
+      targetPort: 6123
+    - name: blob-server
+      port: 6124
+      targetPort: 6124
+    - name: queryable-state
+      port: 6125
+      targetPort: 6125
+    - name: webui
+      port: 8081
+      targetPort: 8081
+    - name: metrics
+      port: 9249
+      targetPort: 9249
+  selector:
+    app: flink
+    component: jobmanager
+

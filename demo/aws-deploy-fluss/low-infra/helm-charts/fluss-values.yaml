@@ -1,0 +1,48 @@
+persistence:
+  enabled: ${enable_persistence}
+  storageClass: ${storage_class}
+  size: ${storage_size}
+
+image:
+  # If using ECR, registry should be empty and repository should be the full ECR URL
+  # If using Docker Hub, registry should be "docker.io" and repository should be "apache/fluss"
+  registry: ${fluss_image_registry}
+  repository: ${fluss_image_repository}
+  tag: ${fluss_version}
+
+coordinator:
+  replicas: ${coordinator_replicas}
+  nodeSelector:
+    fluss-component: coordinator
+  tolerations:
+    - key: "fluss-component"
+      operator: "Equal"
+      value: "coordinator"
+      effect: "NoSchedule"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: fluss-component
+                operator: In
+                values:
+                  - coordinator
+
+tabletServer:
+  replicas: ${tablet_server_replicas}
+  nodeSelector:
+    fluss-component: tablet-server
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: fluss-component
+                operator: In
+                values:
+                  - tablet-server
+
+configurationOverrides:
+  "zookeeper.address": zk-svc.${namespace}.svc.cluster.local:2181
+

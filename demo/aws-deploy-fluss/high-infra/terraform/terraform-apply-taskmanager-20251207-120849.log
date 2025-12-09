@@ -1,0 +1,694 @@
+[0m[1mmodule.eks.module.kms.data.aws_partition.current[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mdata.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mdata.aws_region.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.kms.data.aws_caller_identity.current[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_partition.current: Reading...[0m[0m
+[0m[1mdata.aws_availability_zones.available: Reading...[0m[0m
+[0m[1mmodule.eks.aws_cloudwatch_log_group.this[0]: Refreshing state... [id=/aws/eks/fluss-eks-cluster/cluster][0m
+[0m[1mmodule.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0aa4f4d63a0675764][0m
+[0m[1mmodule.eks.module.kms.data.aws_partition.current[0]: Read complete after 0s [id=aws][0m
+[0m[1mdata.aws_region.current: Read complete after 0s [id=us-west-2][0m
+[0m[1mmodule.eks.data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2764486067][0m
+[0m[1mmodule.eks.aws_iam_role.this[0]: Refreshing state... [id=fluss-eks-cluster-cluster-20251207060001767500000001][0m
+[0m[1mmodule.eks.data.aws_caller_identity.current: Read complete after 0s [id=343218179954][0m
+[0m[1mmodule.eks.data.aws_iam_session_context.current: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_iam_session_context.current: Read complete after 0s [id=arn:aws:iam::343218179954:user/streampipeline][0m
+[0m[1mdata.aws_caller_identity.current: Read complete after 0s [id=343218179954][0m
+[0m[1mmodule.eks.module.kms.data.aws_caller_identity.current[0]: Read complete after 1s [id=343218179954][0m
+[0m[1mdata.aws_availability_zones.available: Read complete after 1s [id=us-west-2][0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSVPCResourceController"]: Refreshing state... [id=fluss-eks-cluster-cluster-20251207060001767500000001-20251207060004452000000002][0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Refreshing state... [id=fluss-eks-cluster-cluster-20251207060001767500000001-20251207060004741200000003][0m
+[0m[1mmodule.eks.module.kms.data.aws_iam_policy_document.this[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.kms.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=2857491641][0m
+[0m[1mmodule.eks.module.kms.aws_kms_key.this[0]: Refreshing state... [id=bed2df87-a207-473d-b1a3-0f8df9d5a111][0m
+[0m[1mmodule.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-0fffe60a7e518046a][0m
+[0m[1mmodule.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-08ec5bde8489e1b6c][0m
+[0m[1mmodule.eks.aws_security_group.cluster[0]: Refreshing state... [id=sg-0cadc653ffab55f90][0m
+[0m[1mmodule.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-0f6b6c4a4cfe70228][0m
+[0m[1mmodule.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-007616c1786802671][0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-051691ac188694236][0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-0210faabe9e985b66][0m
+[0m[1mmodule.vpc.aws_route_table.private[0]: Refreshing state... [id=rtb-0f3f7fac77ebdc528][0m
+[0m[1mmodule.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-0cce102fa9943c5a6][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-073b477703902b204][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-02f9afca01ecf9df0][0m
+[0m[1mmodule.eks.aws_security_group.node[0]: Refreshing state... [id=sg-0b86fb089acd8360c][0m
+[0m[1mmodule.eks.module.kms.aws_kms_alias.this["cluster"]: Refreshing state... [id=alias/eks/fluss-eks-cluster][0m
+[0m[1mmodule.eks.aws_iam_policy.cluster_encryption[0]: Refreshing state... [id=arn:aws:iam::343218179954:policy/fluss-eks-cluster-cluster-ClusterEncryption20251207060031100200000022][0m
+[0m[1mmodule.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-0f6b6c4a4cfe702281080289494][0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-0a0d984c847f14542][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-01457958d99e48676][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-03e37e86bde3706e6][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Refreshing state... [id=fluss-eks-cluster-cluster-20251207060001767500000001-20251207060032232600000023][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_caller_identity.current: Read complete after 0s [id=343218179954][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0671c3ba197133ef1][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_caller_identity.current: Read complete after 0s [id=343218179954][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-01e47a58ebae58f29][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Refreshing state... [id=sgrule-3043606549][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_caller_identity.current: Read complete after 0s [id=343218179954][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_443"]: Refreshing state... [id=sgrule-948301502][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Refreshing state... [id=sgrule-2662645915][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Refreshing state... [id=sgrule-988504948][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Refreshing state... [id=sgrule-3700073493][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_caller_identity.current: Read complete after 0s [id=343218179954][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].data.aws_caller_identity.current: Read complete after 0s [id=343218179954][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Refreshing state... [id=sgrule-110428066][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Refreshing state... [id=sgrule-825584530][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Refreshing state... [id=sgrule-3089864670][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Refreshing state... [id=sgrule-665003059][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Refreshing state... [id=sgrule-3486947380][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role.this[0]: Refreshing state... [id=producer-eks-node-group-2025120706002183780000000b][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role.this[0]: Refreshing state... [id=tablet-server-eks-node-group-2025120706002193230000000c][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role.this[0]: Refreshing state... [id=flink-jobmanager-eks-node-group-20251207060021525500000008][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role.this[0]: Refreshing state... [id=coordinator-eks-node-group-2025120706002166670000000a][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role.this[0]: Refreshing state... [id=flink-taskmanager-eks-node-group-20251207060021623000000009][0m
+[0m[1mmodule.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Refreshing state... [id=sgrule-830966438][0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Refreshing state... [id=nat-0c4104f3a60db3279][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].module.user_data.data.cloudinit_config.linux_eks_managed_node_group[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].module.user_data.data.cloudinit_config.linux_eks_managed_node_group[0]: Read complete after 0s [id=849341900][0m
+[0m[1mmodule.vpc.aws_route.private_nat_gateway[0]: Refreshing state... [id=r-rtb-0f3f7fac77ebdc5281080289494][0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Refreshing state... [id=fluss-eks-cluster][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=coordinator-eks-node-group-2025120706002166670000000a-2025120706002642890000000e][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=flink-taskmanager-eks-node-group-20251207060021623000000009-20251207060027568700000010][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=tablet-server-eks-node-group-2025120706002193230000000c-20251207060028169100000012][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=flink-jobmanager-eks-node-group-20251207060021525500000008-20251207060027662900000011][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=producer-eks-node-group-2025120706002183780000000b-2025120706002705100000000f][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Refreshing state... [id=coordinator-eks-node-group-2025120706002166670000000a-20251207060029010800000015][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Refreshing state... [id=flink-jobmanager-eks-node-group-20251207060021525500000008-20251207060030887200000020][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=producer-eks-node-group-2025120706002183780000000b-2025120706002994790000001a][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Refreshing state... [id=tablet-server-eks-node-group-2025120706002193230000000c-20251207060030934800000021][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=producer-eks-node-group-2025120706002183780000000b-20251207060029380200000017][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=flink-taskmanager-eks-node-group-20251207060021623000000009-2025120706003026110000001c][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Refreshing state... [id=producer-eks-node-group-2025120706002183780000000b-20251207060029635400000019][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=flink-jobmanager-eks-node-group-20251207060021525500000008-20251207060029603800000018][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=coordinator-eks-node-group-2025120706002166670000000a-2025120706003035140000001d][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=coordinator-eks-node-group-2025120706002166670000000a-2025120706003053420000001e][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=tablet-server-eks-node-group-2025120706002193230000000c-2025120706003083820000001f][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=tablet-server-eks-node-group-2025120706002193230000000c-20251207060028327700000013][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Refreshing state... [id=flink-taskmanager-eks-node-group-20251207060021623000000009-20251207060028769100000014][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=flink-jobmanager-eks-node-group-20251207060021525500000008-2025120706003023030000001b][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=flink-taskmanager-eks-node-group-20251207060021623000000009-20251207060029010800000016][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Refreshing state... [id=sg-035bc0556aaff285a,Project][0m
+[0m[1mmodule.eks.time_sleep.this[0]: Refreshing state... [id=2025-12-07T06:10:55Z][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["coredns"]: Reading...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Refreshing state... [id=sg-035bc0556aaff285a,Environment][0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"]: Refreshing state... [id=sg-035bc0556aaff285a,ManagedBy][0m
+[0m[1mmodule.eks.data.tls_certificate.this[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_launch_template.this[0]: Refreshing state... [id=lt-00b7046ff8291133f][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_launch_template.this[0]: Refreshing state... [id=lt-03d846a22aa26539d][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_launch_template.this[0]: Refreshing state... [id=lt-00c17be6d36a77601][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_launch_template.this[0]: Refreshing state... [id=lt-0fa1e5d49cc0dbe7c][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_launch_template.this[0]: Refreshing state... [id=lt-00d8849486a780f45][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 0s [id=vpc-cni][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 0s [id=coredns][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 0s [id=kube-proxy][0m
+[0m[1mmodule.eks.data.tls_certificate.this[0]: Read complete after 0s [id=4687b9863b4f2caa907e2ad6c9ffcf73433dc367][0m
+[0m[1mmodule.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Refreshing state... [id=arn:aws:iam::343218179954:oidc-provider/oidc.eks.us-west-2.amazonaws.com/id/07B1B254D35B976FD1214AC04DD0B604][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Refreshing state... [id=fluss-eks-cluster:tablet-server-20251207061103694900000030][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Refreshing state... [id=fluss-eks-cluster:flink-taskmanager-20251207061103696300000034][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Refreshing state... [id=fluss-eks-cluster:coordinator-20251207061103695200000032][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Refreshing state... [id=fluss-eks-cluster:flink-jobmanager-2025120706110369470000002e][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["producer"].aws_eks_node_group.this[0]: Refreshing state... [id=fluss-eks-cluster:producer-20251207061103697300000036][0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Refreshing state... [id=fluss-eks-cluster:kube-proxy][0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Refreshing state... [id=fluss-eks-cluster:vpc-cni][0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Refreshing state... [id=fluss-eks-cluster:coredns][0m
+[0m[1mmodule.eks.kubernetes_config_map_v1_data.aws_auth[0]: Refreshing state... [id=kube-system/aws-auth][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role.this[0]: Refreshing state... [id=fluss-eks-cluster-ebs-csi-driver][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_policy.ebs_csi[0]: Refreshing state... [id=arn:aws:iam::343218179954:policy/AmazonEKS_EBS_CSI_Policy-2025120706135537730000003b][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role_policy_attachment.ebs_csi[0]: Refreshing state... [id=fluss-eks-cluster-ebs-csi-driver-2025120706135842990000003c][0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Refreshing state... [id=fluss-eks-cluster:aws-ebs-csi-driver][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place[0m
+ [36m<=[0m read (data resources)[0m
+
+Terraform will perform the following actions:
+
+[1m  # module.ebs_csi_irsa[0].data.aws_caller_identity.current[0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_caller_identity" "current" {
+      [32m+[0m[0m account_id = (known after apply)
+      [32m+[0m[0m arn        = (known after apply)
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m user_id    = (known after apply)
+    }
+
+[1m  # module.ebs_csi_irsa[0].data.aws_iam_policy_document.ebs_csi[0][0m will be read during apply
+  # (config refers to values not yet known)
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "ebs_csi" {
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m json          = (known after apply)
+      [32m+[0m[0m minified_json = (known after apply)
+
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DescribeAvailabilityZones",
+              [32m+[0m[0m "ec2:DescribeInstances",
+              [32m+[0m[0m "ec2:DescribeSnapshots",
+              [32m+[0m[0m "ec2:DescribeTags",
+              [32m+[0m[0m "ec2:DescribeVolumes",
+              [32m+[0m[0m "ec2:DescribeVolumesModifications",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m "*",
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateSnapshot",
+              [32m+[0m[0m "ec2:ModifyVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:AttachVolume",
+              [32m+[0m[0m "ec2:DetachVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+              [32m+[0m[0m (known after apply),
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateVolume",
+              [32m+[0m[0m "ec2:EnableFastSnapshotRestores",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateTags",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringEquals"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "CreateVolume",
+                  [32m+[0m[0m "CreateSnapshot",
+                ]
+              [32m+[0m[0m variable = "ec2:CreateAction"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteTags",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+              [32m+[0m[0m (known after apply),
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "true",
+                ]
+              [32m+[0m[0m variable = "aws:RequestTag/ebs.csi.aws.com/cluster"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "aws:RequestTag/CSIVolumeName"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "true",
+                ]
+              [32m+[0m[0m variable = "aws:ResourceTag/ebs.csi.aws.com/cluster"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "aws:ResourceTag/CSIVolumeName"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "ec2:ResourceTag/kubernetes.io/created-for/pvc/name"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateSnapshot",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "aws:RequestTag/CSIVolumeSnapshotName"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateSnapshot",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "true",
+                ]
+              [32m+[0m[0m variable = "aws:RequestTag/ebs.csi.aws.com/cluster"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteSnapshot",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "aws:ResourceTag/CSIVolumeSnapshotName"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteSnapshot",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "true",
+                ]
+              [32m+[0m[0m variable = "aws:ResourceTag/ebs.csi.aws.com/cluster"
+            }
+        }
+    }
+
+[1m  # module.ebs_csi_irsa[0].data.aws_iam_policy_document.this[0][0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "this" {
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m json          = (known after apply)
+      [32m+[0m[0m minified_json = (known after apply)
+
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions = [
+              [32m+[0m[0m "sts:AssumeRoleWithWebIdentity",
+            ]
+          [32m+[0m[0m effect  = "Allow"
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringEquals"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "sts.amazonaws.com",
+                ]
+              [32m+[0m[0m variable = "oidc.eks.us-west-2.amazonaws.com/id/07B1B254D35B976FD1214AC04DD0B604:aud"
+            }
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringEquals"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "system:serviceaccount:kube-system:ebs-csi-controller-sa",
+                ]
+              [32m+[0m[0m variable = "oidc.eks.us-west-2.amazonaws.com/id/07B1B254D35B976FD1214AC04DD0B604:sub"
+            }
+
+          [32m+[0m[0m principals {
+              [32m+[0m[0m identifiers = [
+                  [32m+[0m[0m "arn:aws:iam::343218179954:oidc-provider/oidc.eks.us-west-2.amazonaws.com/id/07B1B254D35B976FD1214AC04DD0B604",
+                ]
+              [32m+[0m[0m type        = "Federated"
+            }
+        }
+    }
+
+[1m  # module.ebs_csi_irsa[0].data.aws_partition.current[0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_partition" "current" {
+      [32m+[0m[0m dns_suffix         = (known after apply)
+      [32m+[0m[0m id                 = (known after apply)
+      [32m+[0m[0m partition          = (known after apply)
+      [32m+[0m[0m reverse_dns_prefix = (known after apply)
+    }
+
+[1m  # module.ebs_csi_irsa[0].data.aws_region.current[0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_region" "current" {
+      [32m+[0m[0m description = (known after apply)
+      [32m+[0m[0m endpoint    = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m name        = (known after apply)
+    }
+
+[1m  # module.ebs_csi_irsa[0].aws_iam_policy.ebs_csi[0][0m will be updated in-place
+[0m  [33m~[0m[0m resource "aws_iam_policy" "ebs_csi" {
+        id               = "arn:aws:iam::343218179954:policy/AmazonEKS_EBS_CSI_Policy-2025120706135537730000003b"
+        name             = "AmazonEKS_EBS_CSI_Policy-2025120706135537730000003b"
+      [33m~[0m[0m policy           = jsonencode(
+            {
+              [31m-[0m[0m Statement = [
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action   = [
+                          [31m-[0m[0m "ec2:DescribeVolumesModifications",
+                          [31m-[0m[0m "ec2:DescribeVolumes",
+                          [31m-[0m[0m "ec2:DescribeTags",
+                          [31m-[0m[0m "ec2:DescribeSnapshots",
+                          [31m-[0m[0m "ec2:DescribeInstances",
+                          [31m-[0m[0m "ec2:DescribeAvailabilityZones",
+                        ]
+                      [31m-[0m[0m Effect   = "Allow"
+                      [31m-[0m[0m Resource = "*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action   = [
+                          [31m-[0m[0m "ec2:ModifyVolume",
+                          [31m-[0m[0m "ec2:CreateSnapshot",
+                        ]
+                      [31m-[0m[0m Effect   = "Allow"
+                      [31m-[0m[0m Resource = "arn:aws:ec2:*:*:volume/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action   = [
+                          [31m-[0m[0m "ec2:DetachVolume",
+                          [31m-[0m[0m "ec2:AttachVolume",
+                        ]
+                      [31m-[0m[0m Effect   = "Allow"
+                      [31m-[0m[0m Resource = [
+                          [31m-[0m[0m "arn:aws:ec2:*:*:volume/*",
+                          [31m-[0m[0m "arn:aws:ec2:*:*:instance/*",
+                        ]
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action   = [
+                          [31m-[0m[0m "ec2:EnableFastSnapshotRestores",
+                          [31m-[0m[0m "ec2:CreateVolume",
+                        ]
+                      [31m-[0m[0m Effect   = "Allow"
+                      [31m-[0m[0m Resource = "arn:aws:ec2:*:*:snapshot/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:CreateTags"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringEquals = {
+                              [31m-[0m[0m "ec2:CreateAction" = [
+                                  [31m-[0m[0m "CreateVolume",
+                                  [31m-[0m[0m "CreateSnapshot",
+                                ]
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = [
+                          [31m-[0m[0m "arn:aws:ec2:*:*:volume/*",
+                          [31m-[0m[0m "arn:aws:ec2:*:*:snapshot/*",
+                        ]
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action   = "ec2:DeleteTags"
+                      [31m-[0m[0m Effect   = "Allow"
+                      [31m-[0m[0m Resource = [
+                          [31m-[0m[0m "arn:aws:ec2:*:*:volume/*",
+                          [31m-[0m[0m "arn:aws:ec2:*:*:snapshot/*",
+                        ]
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:CreateVolume"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringLike = {
+                              [31m-[0m[0m "aws:RequestTag/ebs.csi.aws.com/cluster" = "true"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = "arn:aws:ec2:*:*:volume/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:CreateVolume"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringLike = {
+                              [31m-[0m[0m "aws:RequestTag/CSIVolumeName" = "*"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = "arn:aws:ec2:*:*:volume/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:DeleteVolume"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringLike = {
+                              [31m-[0m[0m "aws:ResourceTag/ebs.csi.aws.com/cluster" = "true"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = "arn:aws:ec2:*:*:volume/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:DeleteVolume"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringLike = {
+                              [31m-[0m[0m "aws:ResourceTag/CSIVolumeName" = "*"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = "arn:aws:ec2:*:*:volume/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:DeleteVolume"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringLike = {
+                              [31m-[0m[0m "ec2:ResourceTag/kubernetes.io/created-for/pvc/name" = "*"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = "arn:aws:ec2:*:*:volume/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:CreateSnapshot"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringLike = {
+                              [31m-[0m[0m "aws:RequestTag/CSIVolumeSnapshotName" = "*"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = "arn:aws:ec2:*:*:snapshot/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:CreateSnapshot"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringLike = {
+                              [31m-[0m[0m "aws:RequestTag/ebs.csi.aws.com/cluster" = "true"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = "arn:aws:ec2:*:*:snapshot/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:DeleteSnapshot"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringLike = {
+                              [31m-[0m[0m "aws:ResourceTag/CSIVolumeSnapshotName" = "*"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = "arn:aws:ec2:*:*:snapshot/*"
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "ec2:DeleteSnapshot"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringLike = {
+                              [31m-[0m[0m "aws:ResourceTag/ebs.csi.aws.com/cluster" = "true"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Resource  = "arn:aws:ec2:*:*:snapshot/*"
+                    },
+                ]
+              [31m-[0m[0m Version   = "2012-10-17"
+            }
+        ) -> (known after apply)
+        tags             = {
+            "Environment" = "dev"
+            "ManagedBy"   = "terraform"
+            "Name"        = "fluss-eks-cluster-ebs-csi-driver"
+            "Project"     = "fluss-deployment"
+        }
+        [90m# (7 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.ebs_csi_irsa[0].aws_iam_role.this[0][0m will be updated in-place
+[0m  [33m~[0m[0m resource "aws_iam_role" "this" {
+      [33m~[0m[0m assume_role_policy    = jsonencode(
+            {
+              [31m-[0m[0m Statement = [
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "sts:AssumeRoleWithWebIdentity"
+                      [31m-[0m[0m Condition = {
+                          [31m-[0m[0m StringEquals = {
+                              [31m-[0m[0m "oidc.eks.us-west-2.amazonaws.com/id/07B1B254D35B976FD1214AC04DD0B604:aud" = "sts.amazonaws.com"
+                              [31m-[0m[0m "oidc.eks.us-west-2.amazonaws.com/id/07B1B254D35B976FD1214AC04DD0B604:sub" = "system:serviceaccount:kube-system:ebs-csi-controller-sa"
+                            }
+                        }
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Principal = {
+                          [31m-[0m[0m Federated = "arn:aws:iam::343218179954:oidc-provider/oidc.eks.us-west-2.amazonaws.com/id/07B1B254D35B976FD1214AC04DD0B604"
+                        }
+                    },
+                ]
+              [31m-[0m[0m Version   = "2012-10-17"
+            }
+        ) -> (known after apply)
+        id                    = "fluss-eks-cluster-ebs-csi-driver"
+        name                  = "fluss-eks-cluster-ebs-csi-driver"
+        tags                  = {
+            "Environment" = "dev"
+            "ManagedBy"   = "terraform"
+            "Name"        = "fluss-eks-cluster-ebs-csi-driver"
+            "Project"     = "fluss-deployment"
+        }
+        [90m# (11 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0][0m will be updated in-place
+[0m  [33m~[0m[0m resource "aws_eks_node_group" "this" {
+        id                     = "fluss-eks-cluster:flink-taskmanager-20251207061103696300000034"
+        tags                   = {
+            "Component"   = "flink-taskmanager"
+            "Environment" = "dev"
+            "ManagedBy"   = "terraform"
+            "Name"        = "flink-taskmanager"
+            "Project"     = "fluss-deployment"
+            "Service"     = "flink"
+        }
+        [90m# (16 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m[0m scaling_config {
+          [33m~[0m[0m max_size     = 2 [33m->[0m[0m 4
+          [33m~[0m[0m min_size     = 2 [33m->[0m[0m 4
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+        [90m# (4 unchanged blocks hidden)[0m[0m
+    }
+
+[1mPlan:[0m 0 to add, 3 to change, 0 to destroy.
+[0m[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Modifying... [id=fluss-eks-cluster:flink-taskmanager-20251207061103696300000034][0m[0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mArgument is deprecated[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  with module.eks.aws_iam_role.this[0],
+[33m│[0m [0m  on .terraform/modules/eks/main.tf line 293, in resource "aws_iam_role" "this":
+[33m│[0m [0m 293: resource "aws_iam_role" "this" [4m{[0m[0m
+[33m│[0m [0m
+[33m│[0m [0minline_policy is deprecated. Use the aws_iam_role_policy resource instead.
+[33m│[0m [0mIf Terraform should exclusively manage all inline policy associations (the
+[33m│[0m [0mcurrent behavior of this argument), use the aws_iam_role_policies_exclusive
+[33m│[0m [0mresource as well.
+[33m│[0m [0m
+[33m│[0m [0m(and 3 more similar warnings elsewhere)
+[33m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mupdating EKS Node Group (fluss-eks-cluster:flink-taskmanager-20251207061103696300000034) config: operation error EKS: UpdateNodegroupConfig, https response error StatusCode: 400, RequestID: fa70c739-eb32-4af2-81c4-c5b0c40d654f, InvalidParameterException: Minimum capacity 4 can't be greater than desired size 2[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with module.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0],
+[31m│[0m [0m  on .terraform/modules/eks/modules/eks-managed-node-group/main.tf line 308, in resource "aws_eks_node_group" "this":
+[31m│[0m [0m 308: resource "aws_eks_node_group" "this" [4m{[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m

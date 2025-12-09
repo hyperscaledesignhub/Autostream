@@ -1,0 +1,3063 @@
+[0m[1mmodule.eks.data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.kms.data.aws_caller_identity.current[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_partition.current: Reading...[0m[0m
+[0m[1mdata.aws_availability_zones.available: Reading...[0m[0m
+[0m[1mdata.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.kms.data.aws_partition.current[0]: Reading...[0m[0m
+[0m[1mmodule.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0becf5985eacd4a4d][0m
+[0m[1mmodule.eks.module.kms.data.aws_partition.current[0]: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mdata.aws_region.current: Reading...[0m[0m
+[0m[1mdata.aws_region.current: Read complete after 0s [id=us-west-2][0m
+[0m[1mmodule.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2764486067][0m
+[0m[1mmodule.eks.data.aws_caller_identity.current: Read complete after 1s [id=343218179954][0m
+[0m[1mmodule.eks.data.aws_iam_session_context.current: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_iam_session_context.current: Read complete after 0s [id=arn:aws:iam::343218179954:user/streampipeline][0m
+[0m[1mmodule.eks.module.kms.data.aws_caller_identity.current[0]: Read complete after 1s [id=343218179954][0m
+[0m[1mdata.aws_caller_identity.current: Read complete after 1s [id=343218179954][0m
+[0m[1mdata.aws_availability_zones.available: Read complete after 2s [id=us-west-2][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].data.aws_caller_identity.current: Read complete after 1s [id=343218179954][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].data.aws_caller_identity.current: Read complete after 1s [id=343218179954][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].data.aws_caller_identity.current: Read complete after 1s [id=343218179954][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].data.aws_caller_identity.current: Read complete after 1s [id=343218179954][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+ [36m<=[0m read (data resources)[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_ecr_lifecycle_policy.demo_app[0m will be created
+[0m  [32m+[0m[0m resource "aws_ecr_lifecycle_policy" "demo_app" {
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m policy      = jsonencode(
+            {
+              [32m+[0m[0m rules = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m action       = {
+                          [32m+[0m[0m type = "expire"
+                        }
+                      [32m+[0m[0m description  = "Keep last 10 images"
+                      [32m+[0m[0m rulePriority = 1
+                      [32m+[0m[0m selection    = {
+                          [32m+[0m[0m countNumber = 10
+                          [32m+[0m[0m countType   = "imageCountMoreThan"
+                          [32m+[0m[0m tagStatus   = "any"
+                        }
+                    },
+                ]
+            }
+        )
+      [32m+[0m[0m registry_id = (known after apply)
+      [32m+[0m[0m repository  = "fluss-demo"
+    }
+
+[1m  # aws_ecr_lifecycle_policy.fluss[0m will be created
+[0m  [32m+[0m[0m resource "aws_ecr_lifecycle_policy" "fluss" {
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m policy      = jsonencode(
+            {
+              [32m+[0m[0m rules = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m action       = {
+                          [32m+[0m[0m type = "expire"
+                        }
+                      [32m+[0m[0m description  = "Keep last 5 images"
+                      [32m+[0m[0m rulePriority = 1
+                      [32m+[0m[0m selection    = {
+                          [32m+[0m[0m countNumber = 5
+                          [32m+[0m[0m countType   = "imageCountMoreThan"
+                          [32m+[0m[0m tagStatus   = "any"
+                        }
+                    },
+                ]
+            }
+        )
+      [32m+[0m[0m registry_id = (known after apply)
+      [32m+[0m[0m repository  = "fluss"
+    }
+
+[1m  # aws_ecr_repository.demo_app[0m will be created
+[0m  [32m+[0m[0m resource "aws_ecr_repository" "demo_app" {
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m force_delete         = true
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m image_tag_mutability = "MUTABLE"
+      [32m+[0m[0m name                 = "fluss-demo"
+      [32m+[0m[0m registry_id          = (known after apply)
+      [32m+[0m[0m repository_url       = (known after apply)
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "Name"        = "fluss-demo"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-demo"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+
+      [32m+[0m[0m encryption_configuration {
+          [32m+[0m[0m encryption_type = "AES256"
+          [32m+[0m[0m kms_key         = (known after apply)
+        }
+
+      [32m+[0m[0m image_scanning_configuration {
+          [32m+[0m[0m scan_on_push = true
+        }
+    }
+
+[1m  # aws_ecr_repository.fluss[0m will be created
+[0m  [32m+[0m[0m resource "aws_ecr_repository" "fluss" {
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m force_delete         = true
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m image_tag_mutability = "MUTABLE"
+      [32m+[0m[0m name                 = "fluss"
+      [32m+[0m[0m registry_id          = (known after apply)
+      [32m+[0m[0m repository_url       = (known after apply)
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "Name"        = "fluss"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+
+      [32m+[0m[0m encryption_configuration {
+          [32m+[0m[0m encryption_type = "AES256"
+          [32m+[0m[0m kms_key         = (known after apply)
+        }
+
+      [32m+[0m[0m image_scanning_configuration {
+          [32m+[0m[0m scan_on_push = true
+        }
+    }
+
+[1m  # aws_eks_addon.ebs_csi_driver[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_addon" "ebs_csi_driver" {
+      [32m+[0m[0m addon_name                  = "aws-ebs-csi-driver"
+      [32m+[0m[0m addon_version               = (known after apply)
+      [32m+[0m[0m arn                         = (known after apply)
+      [32m+[0m[0m cluster_name                = "fluss-eks-cluster"
+      [32m+[0m[0m configuration_values        = (known after apply)
+      [32m+[0m[0m created_at                  = (known after apply)
+      [32m+[0m[0m id                          = (known after apply)
+      [32m+[0m[0m modified_at                 = (known after apply)
+      [32m+[0m[0m resolve_conflicts_on_create = "OVERWRITE"
+      [32m+[0m[0m resolve_conflicts_on_update = "OVERWRITE"
+      [32m+[0m[0m service_account_role_arn    = (known after apply)
+      [32m+[0m[0m tags                        = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-ebs-csi-driver"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all                    = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-ebs-csi-driver"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+
+      [32m+[0m[0m timeouts {
+          [32m+[0m[0m create = "10m"
+          [32m+[0m[0m delete = "10m"
+          [32m+[0m[0m update = "10m"
+        }
+    }
+
+[1m  # module.ebs_csi_irsa[0].data.aws_caller_identity.current[0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_caller_identity" "current" {
+      [32m+[0m[0m account_id = (known after apply)
+      [32m+[0m[0m arn        = (known after apply)
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m user_id    = (known after apply)
+    }
+
+[1m  # module.ebs_csi_irsa[0].data.aws_iam_policy_document.ebs_csi[0][0m will be read during apply
+  # (config refers to values not yet known)
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "ebs_csi" {
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m json          = (known after apply)
+      [32m+[0m[0m minified_json = (known after apply)
+
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DescribeAvailabilityZones",
+              [32m+[0m[0m "ec2:DescribeInstances",
+              [32m+[0m[0m "ec2:DescribeSnapshots",
+              [32m+[0m[0m "ec2:DescribeTags",
+              [32m+[0m[0m "ec2:DescribeVolumes",
+              [32m+[0m[0m "ec2:DescribeVolumesModifications",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m "*",
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateSnapshot",
+              [32m+[0m[0m "ec2:ModifyVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:AttachVolume",
+              [32m+[0m[0m "ec2:DetachVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+              [32m+[0m[0m (known after apply),
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateVolume",
+              [32m+[0m[0m "ec2:EnableFastSnapshotRestores",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateTags",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringEquals"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "CreateVolume",
+                  [32m+[0m[0m "CreateSnapshot",
+                ]
+              [32m+[0m[0m variable = "ec2:CreateAction"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteTags",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+              [32m+[0m[0m (known after apply),
+            ]
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "true",
+                ]
+              [32m+[0m[0m variable = "aws:RequestTag/ebs.csi.aws.com/cluster"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "aws:RequestTag/CSIVolumeName"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "true",
+                ]
+              [32m+[0m[0m variable = "aws:ResourceTag/ebs.csi.aws.com/cluster"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "aws:ResourceTag/CSIVolumeName"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteVolume",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "ec2:ResourceTag/kubernetes.io/created-for/pvc/name"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateSnapshot",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "aws:RequestTag/CSIVolumeSnapshotName"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:CreateSnapshot",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "true",
+                ]
+              [32m+[0m[0m variable = "aws:RequestTag/ebs.csi.aws.com/cluster"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteSnapshot",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "*",
+                ]
+              [32m+[0m[0m variable = "aws:ResourceTag/CSIVolumeSnapshotName"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "ec2:DeleteSnapshot",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m (known after apply),
+            ]
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringLike"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "true",
+                ]
+              [32m+[0m[0m variable = "aws:ResourceTag/ebs.csi.aws.com/cluster"
+            }
+        }
+    }
+
+[1m  # module.ebs_csi_irsa[0].data.aws_iam_policy_document.this[0][0m will be read during apply
+  # (config refers to values not yet known)
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "this" {
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m json          = (known after apply)
+      [32m+[0m[0m minified_json = (known after apply)
+
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions = [
+              [32m+[0m[0m "sts:AssumeRoleWithWebIdentity",
+            ]
+          [32m+[0m[0m effect  = "Allow"
+
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringEquals"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "sts.amazonaws.com",
+                ]
+              [32m+[0m[0m variable = (known after apply)
+            }
+          [32m+[0m[0m condition {
+              [32m+[0m[0m test     = "StringEquals"
+              [32m+[0m[0m values   = [
+                  [32m+[0m[0m "system:serviceaccount:kube-system:ebs-csi-controller-sa",
+                ]
+              [32m+[0m[0m variable = (known after apply)
+            }
+
+          [32m+[0m[0m principals {
+              [32m+[0m[0m identifiers = [
+                  [32m+[0m[0m (known after apply),
+                ]
+              [32m+[0m[0m type        = "Federated"
+            }
+        }
+    }
+
+[1m  # module.ebs_csi_irsa[0].data.aws_partition.current[0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_partition" "current" {
+      [32m+[0m[0m dns_suffix         = (known after apply)
+      [32m+[0m[0m id                 = (known after apply)
+      [32m+[0m[0m partition          = (known after apply)
+      [32m+[0m[0m reverse_dns_prefix = (known after apply)
+    }
+
+[1m  # module.ebs_csi_irsa[0].data.aws_region.current[0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_region" "current" {
+      [32m+[0m[0m description = (known after apply)
+      [32m+[0m[0m endpoint    = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m name        = (known after apply)
+    }
+
+[1m  # module.ebs_csi_irsa[0].aws_iam_policy.ebs_csi[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_policy" "ebs_csi" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m attachment_count = (known after apply)
+      [32m+[0m[0m description      = "Provides permissions to manage EBS volumes via the container storage interface driver"
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m name             = (known after apply)
+      [32m+[0m[0m name_prefix      = "AmazonEKS_EBS_CSI_Policy-"
+      [32m+[0m[0m path             = "/"
+      [32m+[0m[0m policy           = (known after apply)
+      [32m+[0m[0m policy_id        = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-ebs-csi-driver"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-ebs-csi-driver"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+    }
+
+[1m  # module.ebs_csi_irsa[0].aws_iam_role.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "this" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = (known after apply)
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m force_detach_policies = true
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = "fluss-eks-cluster-ebs-csi-driver"
+      [32m+[0m[0m name_prefix           = (known after apply)
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-ebs-csi-driver"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-ebs-csi-driver"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # module.ebs_csi_irsa[0].aws_iam_role_policy_attachment.ebs_csi[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "ebs_csi" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = (known after apply)
+      [32m+[0m[0m role       = "fluss-eks-cluster-ebs-csi-driver"
+    }
+
+[1m  # module.eks.data.aws_eks_addon_version.this["coredns"][0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_eks_addon_version" "this" {
+      [32m+[0m[0m addon_name         = "coredns"
+      [32m+[0m[0m id                 = (known after apply)
+      [32m+[0m[0m kubernetes_version = "1.28"
+      [32m+[0m[0m most_recent        = true
+      [32m+[0m[0m version            = (known after apply)
+    }
+
+[1m  # module.eks.data.aws_eks_addon_version.this["kube-proxy"][0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_eks_addon_version" "this" {
+      [32m+[0m[0m addon_name         = "kube-proxy"
+      [32m+[0m[0m id                 = (known after apply)
+      [32m+[0m[0m kubernetes_version = "1.28"
+      [32m+[0m[0m most_recent        = true
+      [32m+[0m[0m version            = (known after apply)
+    }
+
+[1m  # module.eks.data.aws_eks_addon_version.this["vpc-cni"][0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_eks_addon_version" "this" {
+      [32m+[0m[0m addon_name         = "vpc-cni"
+      [32m+[0m[0m id                 = (known after apply)
+      [32m+[0m[0m kubernetes_version = "1.28"
+      [32m+[0m[0m most_recent        = true
+      [32m+[0m[0m version            = (known after apply)
+    }
+
+[1m  # module.eks.data.tls_certificate.this[0][0m will be read during apply
+  # (config refers to values not yet known)
+[0m [36m<=[0m[0m data "tls_certificate" "this" {
+      [32m+[0m[0m certificates = (known after apply)
+      [32m+[0m[0m id           = (known after apply)
+      [32m+[0m[0m url          = (known after apply)
+    }
+
+[1m  # module.eks.aws_cloudwatch_log_group.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_cloudwatch_log_group" "this" {
+      [32m+[0m[0m arn               = (known after apply)
+      [32m+[0m[0m id                = (known after apply)
+      [32m+[0m[0m log_group_class   = (known after apply)
+      [32m+[0m[0m name              = "/aws/eks/fluss-eks-cluster/cluster"
+      [32m+[0m[0m name_prefix       = (known after apply)
+      [32m+[0m[0m retention_in_days = 90
+      [32m+[0m[0m skip_destroy      = false
+      [32m+[0m[0m tags              = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "/aws/eks/fluss-eks-cluster/cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all          = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "/aws/eks/fluss-eks-cluster/cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+    }
+
+[1m  # module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"][0m will be created
+[0m  [32m+[0m[0m resource "aws_ec2_tag" "cluster_primary_security_group" {
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m key         = "Environment"
+      [32m+[0m[0m resource_id = (known after apply)
+      [32m+[0m[0m value       = "dev"
+    }
+
+[1m  # module.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_ec2_tag" "cluster_primary_security_group" {
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m key         = "ManagedBy"
+      [32m+[0m[0m resource_id = (known after apply)
+      [32m+[0m[0m value       = "terraform"
+    }
+
+[1m  # module.eks.aws_ec2_tag.cluster_primary_security_group["Project"][0m will be created
+[0m  [32m+[0m[0m resource "aws_ec2_tag" "cluster_primary_security_group" {
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m key         = "Project"
+      [32m+[0m[0m resource_id = (known after apply)
+      [32m+[0m[0m value       = "fluss-deployment"
+    }
+
+[1m  # module.eks.aws_eks_addon.this["coredns"][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_addon" "this" {
+      [32m+[0m[0m addon_name           = "coredns"
+      [32m+[0m[0m addon_version        = (known after apply)
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m cluster_name         = "fluss-eks-cluster"
+      [32m+[0m[0m configuration_values = (known after apply)
+      [32m+[0m[0m created_at           = (known after apply)
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m modified_at          = (known after apply)
+      [32m+[0m[0m resolve_conflicts    = "OVERWRITE"
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+
+      [32m+[0m[0m timeouts {}
+    }
+
+[1m  # module.eks.aws_eks_addon.this["kube-proxy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_addon" "this" {
+      [32m+[0m[0m addon_name           = "kube-proxy"
+      [32m+[0m[0m addon_version        = (known after apply)
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m cluster_name         = "fluss-eks-cluster"
+      [32m+[0m[0m configuration_values = (known after apply)
+      [32m+[0m[0m created_at           = (known after apply)
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m modified_at          = (known after apply)
+      [32m+[0m[0m resolve_conflicts    = "OVERWRITE"
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+
+      [32m+[0m[0m timeouts {}
+    }
+
+[1m  # module.eks.aws_eks_addon.this["vpc-cni"][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_addon" "this" {
+      [32m+[0m[0m addon_name           = "vpc-cni"
+      [32m+[0m[0m addon_version        = (known after apply)
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m cluster_name         = "fluss-eks-cluster"
+      [32m+[0m[0m configuration_values = (known after apply)
+      [32m+[0m[0m created_at           = (known after apply)
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m modified_at          = (known after apply)
+      [32m+[0m[0m resolve_conflicts    = "OVERWRITE"
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+
+      [32m+[0m[0m timeouts {}
+    }
+
+[1m  # module.eks.aws_eks_cluster.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_cluster" "this" {
+      [32m+[0m[0m arn                           = (known after apply)
+      [32m+[0m[0m bootstrap_self_managed_addons = true
+      [32m+[0m[0m certificate_authority         = (known after apply)
+      [32m+[0m[0m cluster_id                    = (known after apply)
+      [32m+[0m[0m created_at                    = (known after apply)
+      [32m+[0m[0m enabled_cluster_log_types     = [
+          [32m+[0m[0m "api",
+          [32m+[0m[0m "audit",
+          [32m+[0m[0m "authenticator",
+          [32m+[0m[0m "controllerManager",
+          [32m+[0m[0m "scheduler",
+        ]
+      [32m+[0m[0m endpoint                      = (known after apply)
+      [32m+[0m[0m id                            = (known after apply)
+      [32m+[0m[0m identity                      = (known after apply)
+      [32m+[0m[0m name                          = "fluss-eks-cluster"
+      [32m+[0m[0m platform_version              = (known after apply)
+      [32m+[0m[0m role_arn                      = (known after apply)
+      [32m+[0m[0m status                        = (known after apply)
+      [32m+[0m[0m tags                          = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all                      = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m version                       = "1.28"
+
+      [32m+[0m[0m access_config (known after apply)
+
+      [32m+[0m[0m encryption_config {
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m "secrets",
+            ]
+
+          [32m+[0m[0m provider {
+              [32m+[0m[0m key_arn = (known after apply)
+            }
+        }
+
+      [32m+[0m[0m kubernetes_network_config {
+          [32m+[0m[0m ip_family         = (known after apply)
+          [32m+[0m[0m service_ipv4_cidr = (known after apply)
+          [32m+[0m[0m service_ipv6_cidr = (known after apply)
+
+          [32m+[0m[0m elastic_load_balancing (known after apply)
+        }
+
+      [32m+[0m[0m timeouts {}
+
+      [32m+[0m[0m upgrade_policy (known after apply)
+
+      [32m+[0m[0m vpc_config {
+          [32m+[0m[0m cluster_security_group_id = (known after apply)
+          [32m+[0m[0m endpoint_private_access   = true
+          [32m+[0m[0m endpoint_public_access    = true
+          [32m+[0m[0m public_access_cidrs       = [
+              [32m+[0m[0m "0.0.0.0/0",
+            ]
+          [32m+[0m[0m security_group_ids        = (known after apply)
+          [32m+[0m[0m subnet_ids                = (known after apply)
+          [32m+[0m[0m vpc_id                    = (known after apply)
+        }
+    }
+
+[1m  # module.eks.aws_iam_openid_connect_provider.oidc_provider[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_openid_connect_provider" "oidc_provider" {
+      [32m+[0m[0m arn             = (known after apply)
+      [32m+[0m[0m client_id_list  = [
+          [32m+[0m[0m "sts.amazonaws.com",
+        ]
+      [32m+[0m[0m id              = (known after apply)
+      [32m+[0m[0m tags            = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all        = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m thumbprint_list = (known after apply)
+      [32m+[0m[0m url             = (known after apply)
+    }
+
+[1m  # module.eks.aws_iam_policy.cluster_encryption[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_policy" "cluster_encryption" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m attachment_count = (known after apply)
+      [32m+[0m[0m description      = "Cluster encryption policy to allow cluster role to utilize CMK provided"
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m name             = (known after apply)
+      [32m+[0m[0m name_prefix      = "fluss-eks-cluster-cluster-ClusterEncryption"
+      [32m+[0m[0m path             = "/"
+      [32m+[0m[0m policy           = (known after apply)
+      [32m+[0m[0m policy_id        = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+    }
+
+[1m  # module.eks.aws_iam_role.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "this" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = "sts:AssumeRole"
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "eks.amazonaws.com"
+                        }
+                      [32m+[0m[0m Sid       = "EKSClusterAssumeRole"
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m force_detach_policies = true
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = (known after apply)
+      [32m+[0m[0m name_prefix           = "fluss-eks-cluster-cluster-"
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy {
+          [32m+[0m[0m name   = "fluss-eks-cluster-cluster"
+          [32m+[0m[0m policy = jsonencode(
+                {
+                  [32m+[0m[0m Statement = [
+                      [32m+[0m[0m {
+                          [32m+[0m[0m Action   = [
+                              [32m+[0m[0m "logs:CreateLogGroup",
+                            ]
+                          [32m+[0m[0m Effect   = "Deny"
+                          [32m+[0m[0m Resource = "*"
+                        },
+                    ]
+                  [32m+[0m[0m Version   = "2012-10-17"
+                }
+            )
+        }
+    }
+
+[1m  # module.eks.aws_iam_role_policy_attachment.cluster_encryption[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "cluster_encryption" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = (known after apply)
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.aws_iam_role_policy_attachment.this["AmazonEKSVPCResourceController"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.aws_security_group.cluster[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "cluster" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "EKS cluster security group"
+      [32m+[0m[0m egress                 = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = (known after apply)
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = "fluss-eks-cluster-cluster-"
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc_id                 = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.eks.aws_security_group.node[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "node" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "EKS node shared security group"
+      [32m+[0m[0m egress                 = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = (known after apply)
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = "fluss-eks-cluster-node-"
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-node"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "owned"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-node"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "owned"
+        }
+      [32m+[0m[0m vpc_id                 = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.eks.aws_security_group_rule.cluster["ingress_nodes_443"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "cluster" {
+      [32m+[0m[0m description              = "Node groups to cluster API"
+      [32m+[0m[0m from_port                = 443
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m protocol                 = "tcp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = false
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 443
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["egress_all"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m cidr_blocks              = [
+          [32m+[0m[0m "0.0.0.0/0",
+        ]
+      [32m+[0m[0m description              = "Allow all egress"
+      [32m+[0m[0m from_port                = 0
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "-1"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = false
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 0
+      [32m+[0m[0m type                     = "egress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_cluster_443"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m description              = "Cluster API to node groups"
+      [32m+[0m[0m from_port                = 443
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "tcp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = false
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 443
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m description              = "Cluster API to node 4443/tcp webhook"
+      [32m+[0m[0m from_port                = 4443
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "tcp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = false
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 4443
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m description              = "Cluster API to node 6443/tcp webhook"
+      [32m+[0m[0m from_port                = 6443
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "tcp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = false
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 6443
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m description              = "Cluster API to node 8443/tcp webhook"
+      [32m+[0m[0m from_port                = 8443
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "tcp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = false
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 8443
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m description              = "Cluster API to node 9443/tcp webhook"
+      [32m+[0m[0m from_port                = 9443
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "tcp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = false
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 9443
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m description              = "Cluster API to node kubelets"
+      [32m+[0m[0m from_port                = 10250
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "tcp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = false
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 10250
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m description              = "Node to node ingress on ephemeral ports"
+      [32m+[0m[0m from_port                = 1025
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "tcp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = true
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 65535
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m description              = "Node to node CoreDNS"
+      [32m+[0m[0m from_port                = 53
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "tcp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = true
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 53
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"][0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m[0m description              = "Node to node CoreDNS UDP"
+      [32m+[0m[0m from_port                = 53
+      [32m+[0m[0m id                       = (known after apply)
+      [32m+[0m[0m prefix_list_ids          = []
+      [32m+[0m[0m protocol                 = "udp"
+      [32m+[0m[0m security_group_id        = (known after apply)
+      [32m+[0m[0m security_group_rule_id   = (known after apply)
+      [32m+[0m[0m self                     = true
+      [32m+[0m[0m source_security_group_id = (known after apply)
+      [32m+[0m[0m to_port                  = 53
+      [32m+[0m[0m type                     = "ingress"
+    }
+
+[1m  # module.eks.kubernetes_config_map_v1_data.aws_auth[0][0m will be created
+[0m  [32m+[0m[0m resource "kubernetes_config_map_v1_data" "aws_auth" {
+      [32m+[0m[0m data          = (known after apply)
+      [32m+[0m[0m field_manager = "Terraform"
+      [32m+[0m[0m force         = true
+      [32m+[0m[0m id            = (known after apply)
+
+      [32m+[0m[0m metadata {
+          [32m+[0m[0m name      = "aws-auth"
+          [32m+[0m[0m namespace = "kube-system"
+        }
+    }
+
+[1m  # module.eks.time_sleep.this[0][0m will be created
+[0m  [32m+[0m[0m resource "time_sleep" "this" {
+      [32m+[0m[0m create_duration = "30s"
+      [32m+[0m[0m id              = (known after apply)
+      [32m+[0m[0m triggers        = {
+          [32m+[0m[0m "cluster_certificate_authority_data" = (known after apply)
+          [32m+[0m[0m "cluster_endpoint"                   = (known after apply)
+          [32m+[0m[0m "cluster_name"                       = "fluss-eks-cluster"
+          [32m+[0m[0m "cluster_version"                    = "1.28"
+        }
+    }
+
+[1m  # module.vpc.aws_default_network_acl.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_default_network_acl" "this" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m default_network_acl_id = "acl-038c6cfa8eb7374f1"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc_id                 = (known after apply)
+
+      [32m+[0m[0m egress {
+          [32m+[0m[0m action          = "allow"
+          [32m+[0m[0m from_port       = 0
+          [32m+[0m[0m ipv6_cidr_block = "::/0"
+          [32m+[0m[0m protocol        = "-1"
+          [32m+[0m[0m rule_no         = 101
+          [32m+[0m[0m to_port         = 0
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+      [32m+[0m[0m egress {
+          [32m+[0m[0m action          = "allow"
+          [32m+[0m[0m cidr_block      = "0.0.0.0/0"
+          [32m+[0m[0m from_port       = 0
+          [32m+[0m[0m protocol        = "-1"
+          [32m+[0m[0m rule_no         = 100
+          [32m+[0m[0m to_port         = 0
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [32m+[0m[0m ingress {
+          [32m+[0m[0m action          = "allow"
+          [32m+[0m[0m from_port       = 0
+          [32m+[0m[0m ipv6_cidr_block = "::/0"
+          [32m+[0m[0m protocol        = "-1"
+          [32m+[0m[0m rule_no         = 101
+          [32m+[0m[0m to_port         = 0
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+      [32m+[0m[0m ingress {
+          [32m+[0m[0m action          = "allow"
+          [32m+[0m[0m cidr_block      = "0.0.0.0/0"
+          [32m+[0m[0m from_port       = 0
+          [32m+[0m[0m protocol        = "-1"
+          [32m+[0m[0m rule_no         = 100
+          [32m+[0m[0m to_port         = 0
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1m  # module.vpc.aws_default_route_table.default[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_default_route_table" "default" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m default_route_table_id = "rtb-0f05f478f136c06b4"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m route                  = (known after apply)
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc_id                 = (known after apply)
+
+      [32m+[0m[0m timeouts {
+          [32m+[0m[0m create = "5m"
+          [32m+[0m[0m update = "5m"
+        }
+    }
+
+[1m  # module.vpc.aws_default_security_group.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_default_security_group" "this" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = (known after apply)
+      [32m+[0m[0m egress                 = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = (known after apply)
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc_id                 = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.vpc.aws_eip.nat[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m[0m allocation_id        = (known after apply)
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m association_id       = (known after apply)
+      [32m+[0m[0m carrier_ip           = (known after apply)
+      [32m+[0m[0m customer_owned_ip    = (known after apply)
+      [32m+[0m[0m domain               = "vpc"
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m instance             = (known after apply)
+      [32m+[0m[0m ipam_pool_id         = (known after apply)
+      [32m+[0m[0m network_border_group = (known after apply)
+      [32m+[0m[0m network_interface    = (known after apply)
+      [32m+[0m[0m private_dns          = (known after apply)
+      [32m+[0m[0m private_ip           = (known after apply)
+      [32m+[0m[0m ptr_record           = (known after apply)
+      [32m+[0m[0m public_dns           = (known after apply)
+      [32m+[0m[0m public_ip            = (known after apply)
+      [32m+[0m[0m public_ipv4_pool     = (known after apply)
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc                  = (known after apply)
+    }
+
+[1m  # module.vpc.aws_eip.nat[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m[0m allocation_id        = (known after apply)
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m association_id       = (known after apply)
+      [32m+[0m[0m carrier_ip           = (known after apply)
+      [32m+[0m[0m customer_owned_ip    = (known after apply)
+      [32m+[0m[0m domain               = "vpc"
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m instance             = (known after apply)
+      [32m+[0m[0m ipam_pool_id         = (known after apply)
+      [32m+[0m[0m network_border_group = (known after apply)
+      [32m+[0m[0m network_interface    = (known after apply)
+      [32m+[0m[0m private_dns          = (known after apply)
+      [32m+[0m[0m private_ip           = (known after apply)
+      [32m+[0m[0m ptr_record           = (known after apply)
+      [32m+[0m[0m public_dns           = (known after apply)
+      [32m+[0m[0m public_ip            = (known after apply)
+      [32m+[0m[0m public_ipv4_pool     = (known after apply)
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc                  = (known after apply)
+    }
+
+[1m  # module.vpc.aws_internet_gateway.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_internet_gateway" "this" {
+      [32m+[0m[0m arn      = (known after apply)
+      [32m+[0m[0m id       = (known after apply)
+      [32m+[0m[0m owner_id = (known after apply)
+      [32m+[0m[0m tags     = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc_id   = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.vpc.aws_nat_gateway.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_nat_gateway" "this" {
+      [32m+[0m[0m allocation_id                      = (known after apply)
+      [32m+[0m[0m association_id                     = (known after apply)
+      [32m+[0m[0m connectivity_type                  = "public"
+      [32m+[0m[0m id                                 = (known after apply)
+      [32m+[0m[0m network_interface_id               = (known after apply)
+      [32m+[0m[0m private_ip                         = (known after apply)
+      [32m+[0m[0m public_ip                          = (known after apply)
+      [32m+[0m[0m secondary_private_ip_address_count = (known after apply)
+      [32m+[0m[0m secondary_private_ip_addresses     = (known after apply)
+      [32m+[0m[0m subnet_id                          = (known after apply)
+      [32m+[0m[0m tags                               = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all                           = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+    }
+
+[1m  # module.vpc.aws_nat_gateway.this[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_nat_gateway" "this" {
+      [32m+[0m[0m allocation_id                      = (known after apply)
+      [32m+[0m[0m association_id                     = (known after apply)
+      [32m+[0m[0m connectivity_type                  = "public"
+      [32m+[0m[0m id                                 = (known after apply)
+      [32m+[0m[0m network_interface_id               = (known after apply)
+      [32m+[0m[0m private_ip                         = (known after apply)
+      [32m+[0m[0m public_ip                          = (known after apply)
+      [32m+[0m[0m secondary_private_ip_address_count = (known after apply)
+      [32m+[0m[0m secondary_private_ip_addresses     = (known after apply)
+      [32m+[0m[0m subnet_id                          = (known after apply)
+      [32m+[0m[0m tags                               = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all                           = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+    }
+
+[1m  # module.vpc.aws_route.private_nat_gateway[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "private_nat_gateway" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m nat_gateway_id         = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+
+      [32m+[0m[0m timeouts {
+          [32m+[0m[0m create = "5m"
+        }
+    }
+
+[1m  # module.vpc.aws_route.private_nat_gateway[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "private_nat_gateway" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m nat_gateway_id         = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+
+      [32m+[0m[0m timeouts {
+          [32m+[0m[0m create = "5m"
+        }
+    }
+
+[1m  # module.vpc.aws_route.public_internet_gateway[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "public_internet_gateway" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m gateway_id             = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+
+      [32m+[0m[0m timeouts {
+          [32m+[0m[0m create = "5m"
+        }
+    }
+
+[1m  # module.vpc.aws_route_table.private[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "private" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc_id           = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.vpc.aws_route_table.private[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "private" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc_id           = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.vpc.aws_route_table.public[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "public" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m vpc_id           = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.vpc.aws_route_table_association.private[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table_association.private[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table_association.public[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table_association.public[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_subnet.private[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-west-2a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.0.1.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "shared"
+          [32m+[0m[0m "kubernetes.io/role/internal-elb"         = "1"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "shared"
+          [32m+[0m[0m "kubernetes.io/role/internal-elb"         = "1"
+        }
+      [32m+[0m[0m vpc_id                                         = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.vpc.aws_subnet.private[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-west-2b"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.0.2.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "shared"
+          [32m+[0m[0m "kubernetes.io/role/internal-elb"         = "1"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "shared"
+          [32m+[0m[0m "kubernetes.io/role/internal-elb"         = "1"
+        }
+      [32m+[0m[0m vpc_id                                         = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.vpc.aws_subnet.public[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "public" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-west-2a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.0.101.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "shared"
+          [32m+[0m[0m "kubernetes.io/role/elb"                  = "1"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "shared"
+          [32m+[0m[0m "kubernetes.io/role/elb"                  = "1"
+        }
+      [32m+[0m[0m vpc_id                                         = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.vpc.aws_subnet.public[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "public" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-west-2b"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.0.102.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "shared"
+          [32m+[0m[0m "kubernetes.io/role/elb"                  = "1"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Environment"                             = "dev"
+          [32m+[0m[0m "ManagedBy"                               = "terraform"
+          [32m+[0m[0m "Name"                                    = "fluss-eks-cluster-vpc"
+          [32m+[0m[0m "Project"                                 = "fluss-deployment"
+          [32m+[0m[0m "kubernetes.io/cluster/fluss-eks-cluster" = "shared"
+          [32m+[0m[0m "kubernetes.io/role/elb"                  = "1"
+        }
+      [32m+[0m[0m vpc_id                                         = "vpc-0becf5985eacd4a4d"
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_node_group" "this" {
+      [32m+[0m[0m ami_type               = (known after apply)
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m capacity_type          = "ON_DEMAND"
+      [32m+[0m[0m cluster_name           = "fluss-eks-cluster"
+      [32m+[0m[0m disk_size              = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_types         = [
+          [32m+[0m[0m "t3.medium",
+        ]
+      [32m+[0m[0m labels                 = {
+          [32m+[0m[0m "fluss-component" = "coordinator"
+          [32m+[0m[0m "node-type"       = "coordinator"
+          [32m+[0m[0m "service"         = "coordinator"
+          [32m+[0m[0m "workload"        = "fluss"
+        }
+      [32m+[0m[0m node_group_name        = (known after apply)
+      [32m+[0m[0m node_group_name_prefix = "coordinator-"
+      [32m+[0m[0m node_role_arn          = (known after apply)
+      [32m+[0m[0m release_version        = (known after apply)
+      [32m+[0m[0m resources              = (known after apply)
+      [32m+[0m[0m status                 = (known after apply)
+      [32m+[0m[0m subnet_ids             = (known after apply)
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Component"   = "coordinator"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "coordinator"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Component"   = "coordinator"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "coordinator"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m version                = "1.28"
+
+      [32m+[0m[0m launch_template {
+          [32m+[0m[0m id      = (known after apply)
+          [32m+[0m[0m name    = (known after apply)
+          [32m+[0m[0m version = (known after apply)
+        }
+
+      [32m+[0m[0m node_repair_config (known after apply)
+
+      [32m+[0m[0m scaling_config {
+          [32m+[0m[0m desired_size = 1
+          [32m+[0m[0m max_size     = 1
+          [32m+[0m[0m min_size     = 1
+        }
+
+      [32m+[0m[0m taint {
+          [32m+[0m[0m effect = "NO_SCHEDULE"
+          [32m+[0m[0m key    = "fluss-component"
+          [32m+[0m[0m value  = "coordinator"
+        }
+
+      [32m+[0m[0m timeouts {}
+
+      [32m+[0m[0m update_config {
+          [32m+[0m[0m max_unavailable_percentage = 33
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["coordinator"].aws_iam_role.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "this" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = "sts:AssumeRole"
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "ec2.amazonaws.com"
+                        }
+                      [32m+[0m[0m Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m description           = "EKS managed node group IAM role"
+      [32m+[0m[0m force_detach_policies = true
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = (known after apply)
+      [32m+[0m[0m name_prefix           = "coordinator-eks-node-group-"
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "Component"   = "coordinator"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-coordinator"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "Component"   = "coordinator"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-coordinator"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "additional" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["coordinator"].aws_launch_template.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_launch_template" "this" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m default_version        = (known after apply)
+      [32m+[0m[0m description            = "Custom launch template for coordinator EKS managed node group"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m latest_version         = (known after apply)
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = "coordinator-"
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Component"   = "coordinator"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-coordinator"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Component"   = "coordinator"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-coordinator"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m update_default_version = true
+      [32m+[0m[0m vpc_security_group_ids = (known after apply)
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [32m+[0m[0m metadata_options {
+          [32m+[0m[0m http_endpoint               = "enabled"
+          [32m+[0m[0m http_protocol_ipv6          = (known after apply)
+          [32m+[0m[0m http_put_response_hop_limit = 2
+          [32m+[0m[0m http_tokens                 = "required"
+          [32m+[0m[0m instance_metadata_tags      = (known after apply)
+        }
+
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "instance"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "coordinator"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "coordinator"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "fluss"
+            }
+        }
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "network-interface"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "coordinator"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "coordinator"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "fluss"
+            }
+        }
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "volume"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "coordinator"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "coordinator"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "fluss"
+            }
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_node_group" "this" {
+      [32m+[0m[0m ami_type               = (known after apply)
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m capacity_type          = "ON_DEMAND"
+      [32m+[0m[0m cluster_name           = "fluss-eks-cluster"
+      [32m+[0m[0m disk_size              = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_types         = [
+          [32m+[0m[0m "t3.medium",
+        ]
+      [32m+[0m[0m labels                 = {
+          [32m+[0m[0m "flink-component" = "jobmanager"
+          [32m+[0m[0m "node-type"       = "flink-jobmanager"
+          [32m+[0m[0m "service"         = "flink-jobmanager"
+          [32m+[0m[0m "workload"        = "flink"
+        }
+      [32m+[0m[0m node_group_name        = (known after apply)
+      [32m+[0m[0m node_group_name_prefix = "flink-jobmanager-"
+      [32m+[0m[0m node_role_arn          = (known after apply)
+      [32m+[0m[0m release_version        = (known after apply)
+      [32m+[0m[0m resources              = (known after apply)
+      [32m+[0m[0m status                 = (known after apply)
+      [32m+[0m[0m subnet_ids             = (known after apply)
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Component"   = "flink-jobmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "flink-jobmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Component"   = "flink-jobmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "flink-jobmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m version                = "1.28"
+
+      [32m+[0m[0m launch_template {
+          [32m+[0m[0m id      = (known after apply)
+          [32m+[0m[0m name    = (known after apply)
+          [32m+[0m[0m version = (known after apply)
+        }
+
+      [32m+[0m[0m node_repair_config (known after apply)
+
+      [32m+[0m[0m scaling_config {
+          [32m+[0m[0m desired_size = 1
+          [32m+[0m[0m max_size     = 1
+          [32m+[0m[0m min_size     = 1
+        }
+
+      [32m+[0m[0m taint {
+          [32m+[0m[0m effect = "NO_SCHEDULE"
+          [32m+[0m[0m key    = "flink-component"
+          [32m+[0m[0m value  = "jobmanager"
+        }
+
+      [32m+[0m[0m timeouts {}
+
+      [32m+[0m[0m update_config {
+          [32m+[0m[0m max_unavailable_percentage = 33
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "this" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = "sts:AssumeRole"
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "ec2.amazonaws.com"
+                        }
+                      [32m+[0m[0m Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m description           = "EKS managed node group IAM role"
+      [32m+[0m[0m force_detach_policies = true
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = (known after apply)
+      [32m+[0m[0m name_prefix           = "flink-jobmanager-eks-node-group-"
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "Component"   = "flink-jobmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-flink-jobmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "Component"   = "flink-jobmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-flink-jobmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "additional" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_jobmanager"].aws_launch_template.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_launch_template" "this" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m default_version        = (known after apply)
+      [32m+[0m[0m description            = "Custom launch template for flink-jobmanager EKS managed node group"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m latest_version         = (known after apply)
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = "flink_jobmanager-"
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Component"   = "flink-jobmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-flink-jobmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Component"   = "flink-jobmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-flink-jobmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m update_default_version = true
+      [32m+[0m[0m vpc_security_group_ids = (known after apply)
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [32m+[0m[0m metadata_options {
+          [32m+[0m[0m http_endpoint               = "enabled"
+          [32m+[0m[0m http_protocol_ipv6          = (known after apply)
+          [32m+[0m[0m http_put_response_hop_limit = 2
+          [32m+[0m[0m http_tokens                 = "required"
+          [32m+[0m[0m instance_metadata_tags      = (known after apply)
+        }
+
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "instance"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "flink-jobmanager"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "flink-jobmanager"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "flink"
+            }
+        }
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "network-interface"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "flink-jobmanager"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "flink-jobmanager"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "flink"
+            }
+        }
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "volume"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "flink-jobmanager"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "flink-jobmanager"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "flink"
+            }
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_node_group" "this" {
+      [32m+[0m[0m ami_type               = (known after apply)
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m capacity_type          = "ON_DEMAND"
+      [32m+[0m[0m cluster_name           = "fluss-eks-cluster"
+      [32m+[0m[0m disk_size              = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_types         = [
+          [32m+[0m[0m "t3.medium",
+        ]
+      [32m+[0m[0m labels                 = {
+          [32m+[0m[0m "flink-component" = "taskmanager"
+          [32m+[0m[0m "node-type"       = "flink-taskmanager"
+          [32m+[0m[0m "service"         = "flink-taskmanager"
+          [32m+[0m[0m "workload"        = "flink"
+        }
+      [32m+[0m[0m node_group_name        = (known after apply)
+      [32m+[0m[0m node_group_name_prefix = "flink-taskmanager-"
+      [32m+[0m[0m node_role_arn          = (known after apply)
+      [32m+[0m[0m release_version        = (known after apply)
+      [32m+[0m[0m resources              = (known after apply)
+      [32m+[0m[0m status                 = (known after apply)
+      [32m+[0m[0m subnet_ids             = (known after apply)
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Component"   = "flink-taskmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "flink-taskmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Component"   = "flink-taskmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "flink-taskmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m version                = "1.28"
+
+      [32m+[0m[0m launch_template {
+          [32m+[0m[0m id      = (known after apply)
+          [32m+[0m[0m name    = (known after apply)
+          [32m+[0m[0m version = (known after apply)
+        }
+
+      [32m+[0m[0m node_repair_config (known after apply)
+
+      [32m+[0m[0m scaling_config {
+          [32m+[0m[0m desired_size = 2
+          [32m+[0m[0m max_size     = 2
+          [32m+[0m[0m min_size     = 2
+        }
+
+      [32m+[0m[0m taint {
+          [32m+[0m[0m effect = "NO_SCHEDULE"
+          [32m+[0m[0m key    = "flink-component"
+          [32m+[0m[0m value  = "taskmanager"
+        }
+
+      [32m+[0m[0m timeouts {}
+
+      [32m+[0m[0m update_config {
+          [32m+[0m[0m max_unavailable_percentage = 33
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "this" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = "sts:AssumeRole"
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "ec2.amazonaws.com"
+                        }
+                      [32m+[0m[0m Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m description           = "EKS managed node group IAM role"
+      [32m+[0m[0m force_detach_policies = true
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = (known after apply)
+      [32m+[0m[0m name_prefix           = "flink-taskmanager-eks-node-group-"
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "Component"   = "flink-taskmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-flink-taskmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "Component"   = "flink-taskmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-flink-taskmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "additional" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["flink_taskmanager"].aws_launch_template.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_launch_template" "this" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m default_version        = (known after apply)
+      [32m+[0m[0m description            = "Custom launch template for flink-taskmanager EKS managed node group"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m latest_version         = (known after apply)
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = "flink_taskmanager-"
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Component"   = "flink-taskmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-flink-taskmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Component"   = "flink-taskmanager"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-flink-taskmanager"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "flink"
+        }
+      [32m+[0m[0m update_default_version = true
+      [32m+[0m[0m vpc_security_group_ids = (known after apply)
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [32m+[0m[0m metadata_options {
+          [32m+[0m[0m http_endpoint               = "enabled"
+          [32m+[0m[0m http_protocol_ipv6          = (known after apply)
+          [32m+[0m[0m http_put_response_hop_limit = 2
+          [32m+[0m[0m http_tokens                 = "required"
+          [32m+[0m[0m instance_metadata_tags      = (known after apply)
+        }
+
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "instance"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "flink-taskmanager"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "flink-taskmanager"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "flink"
+            }
+        }
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "network-interface"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "flink-taskmanager"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "flink-taskmanager"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "flink"
+            }
+        }
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "volume"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "flink-taskmanager"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "flink-taskmanager"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "flink"
+            }
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_node_group" "this" {
+      [32m+[0m[0m ami_type               = (known after apply)
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m capacity_type          = "ON_DEMAND"
+      [32m+[0m[0m cluster_name           = "fluss-eks-cluster"
+      [32m+[0m[0m disk_size              = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_types         = [
+          [32m+[0m[0m "t3.medium",
+        ]
+      [32m+[0m[0m labels                 = {
+          [32m+[0m[0m "fluss-component" = "tablet-server"
+          [32m+[0m[0m "node-type"       = "tablet-server"
+          [32m+[0m[0m "service"         = "tablet-server"
+          [32m+[0m[0m "workload"        = "fluss"
+        }
+      [32m+[0m[0m node_group_name        = (known after apply)
+      [32m+[0m[0m node_group_name_prefix = "tablet-server-"
+      [32m+[0m[0m node_role_arn          = (known after apply)
+      [32m+[0m[0m release_version        = (known after apply)
+      [32m+[0m[0m resources              = (known after apply)
+      [32m+[0m[0m status                 = (known after apply)
+      [32m+[0m[0m subnet_ids             = (known after apply)
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Component"   = "tablet-server"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "tablet-server"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Component"   = "tablet-server"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "tablet-server"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m version                = "1.28"
+
+      [32m+[0m[0m launch_template {
+          [32m+[0m[0m id      = (known after apply)
+          [32m+[0m[0m name    = (known after apply)
+          [32m+[0m[0m version = (known after apply)
+        }
+
+      [32m+[0m[0m node_repair_config (known after apply)
+
+      [32m+[0m[0m scaling_config {
+          [32m+[0m[0m desired_size = 3
+          [32m+[0m[0m max_size     = 3
+          [32m+[0m[0m min_size     = 3
+        }
+
+      [32m+[0m[0m timeouts {}
+
+      [32m+[0m[0m update_config {
+          [32m+[0m[0m max_unavailable_percentage = 33
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "this" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = "sts:AssumeRole"
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "ec2.amazonaws.com"
+                        }
+                      [32m+[0m[0m Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m description           = "EKS managed node group IAM role"
+      [32m+[0m[0m force_detach_policies = true
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = (known after apply)
+      [32m+[0m[0m name_prefix           = "tablet-server-eks-node-group-"
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "Component"   = "tablet-server"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-tablet-server"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "Component"   = "tablet-server"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-tablet-server"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "additional" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["tablet_server"].aws_launch_template.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_launch_template" "this" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m default_version        = (known after apply)
+      [32m+[0m[0m description            = "Custom launch template for tablet-server EKS managed node group"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m latest_version         = (known after apply)
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = "tablet_server-"
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Component"   = "tablet-server"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-tablet-server"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Component"   = "tablet-server"
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster-tablet-server"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+          [32m+[0m[0m "Service"     = "fluss"
+        }
+      [32m+[0m[0m update_default_version = true
+      [32m+[0m[0m vpc_security_group_ids = (known after apply)
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [32m+[0m[0m metadata_options {
+          [32m+[0m[0m http_endpoint               = "enabled"
+          [32m+[0m[0m http_protocol_ipv6          = (known after apply)
+          [32m+[0m[0m http_put_response_hop_limit = 2
+          [32m+[0m[0m http_tokens                 = "required"
+          [32m+[0m[0m instance_metadata_tags      = (known after apply)
+        }
+
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "instance"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "tablet-server"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "tablet-server"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "fluss"
+            }
+        }
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "network-interface"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "tablet-server"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "tablet-server"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "fluss"
+            }
+        }
+      [32m+[0m[0m tag_specifications {
+          [32m+[0m[0m resource_type = "volume"
+          [32m+[0m[0m tags          = {
+              [32m+[0m[0m "Component"   = "tablet-server"
+              [32m+[0m[0m "Environment" = "dev"
+              [32m+[0m[0m "ManagedBy"   = "terraform"
+              [32m+[0m[0m "Name"        = "tablet-server"
+              [32m+[0m[0m "Project"     = "fluss-deployment"
+              [32m+[0m[0m "Service"     = "fluss"
+            }
+        }
+    }
+
+[1m  # module.eks.module.kms.data.aws_iam_policy_document.this[0][0m will be read during apply
+  # (config refers to values not yet known)
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "this" {
+      [32m+[0m[0m id                        = (known after apply)
+      [32m+[0m[0m json                      = (known after apply)
+      [32m+[0m[0m minified_json             = (known after apply)
+      [32m+[0m[0m override_policy_documents = []
+      [32m+[0m[0m source_policy_documents   = []
+
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "kms:CancelKeyDeletion",
+              [32m+[0m[0m "kms:Create*",
+              [32m+[0m[0m "kms:Delete*",
+              [32m+[0m[0m "kms:Describe*",
+              [32m+[0m[0m "kms:Disable*",
+              [32m+[0m[0m "kms:Enable*",
+              [32m+[0m[0m "kms:Get*",
+              [32m+[0m[0m "kms:ImportKeyMaterial",
+              [32m+[0m[0m "kms:List*",
+              [32m+[0m[0m "kms:Put*",
+              [32m+[0m[0m "kms:ReplicateKey",
+              [32m+[0m[0m "kms:Revoke*",
+              [32m+[0m[0m "kms:ScheduleKeyDeletion",
+              [32m+[0m[0m "kms:TagResource",
+              [32m+[0m[0m "kms:UntagResource",
+              [32m+[0m[0m "kms:Update*",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m "*",
+            ]
+          [32m+[0m[0m sid       = "KeyAdministration"
+
+          [32m+[0m[0m principals {
+              [32m+[0m[0m identifiers = [
+                  [32m+[0m[0m "arn:aws:iam::343218179954:user/streampipeline",
+                ]
+              [32m+[0m[0m type        = "AWS"
+            }
+        }
+      [32m+[0m[0m statement {
+          [32m+[0m[0m actions   = [
+              [32m+[0m[0m "kms:Decrypt",
+              [32m+[0m[0m "kms:DescribeKey",
+              [32m+[0m[0m "kms:Encrypt",
+              [32m+[0m[0m "kms:GenerateDataKey*",
+              [32m+[0m[0m "kms:ReEncrypt*",
+            ]
+          [32m+[0m[0m resources = [
+              [32m+[0m[0m "*",
+            ]
+          [32m+[0m[0m sid       = "KeyUsage"
+
+          [32m+[0m[0m principals {
+              [32m+[0m[0m identifiers = [
+                  [32m+[0m[0m (known after apply),
+                ]
+              [32m+[0m[0m type        = "AWS"
+            }
+        }
+    }
+
+[1m  # module.eks.module.kms.aws_kms_alias.this["cluster"][0m will be created
+[0m  [32m+[0m[0m resource "aws_kms_alias" "this" {
+      [32m+[0m[0m arn            = (known after apply)
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m name           = "alias/eks/fluss-eks-cluster"
+      [32m+[0m[0m name_prefix    = (known after apply)
+      [32m+[0m[0m target_key_arn = (known after apply)
+      [32m+[0m[0m target_key_id  = (known after apply)
+    }
+
+[1m  # module.eks.module.kms.aws_kms_key.this[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_kms_key" "this" {
+      [32m+[0m[0m arn                                = (known after apply)
+      [32m+[0m[0m bypass_policy_lockout_safety_check = false
+      [32m+[0m[0m customer_master_key_spec           = "SYMMETRIC_DEFAULT"
+      [32m+[0m[0m description                        = "fluss-eks-cluster cluster encryption key"
+      [32m+[0m[0m enable_key_rotation                = true
+      [32m+[0m[0m id                                 = (known after apply)
+      [32m+[0m[0m is_enabled                         = true
+      [32m+[0m[0m key_id                             = (known after apply)
+      [32m+[0m[0m key_usage                          = "ENCRYPT_DECRYPT"
+      [32m+[0m[0m multi_region                       = false
+      [32m+[0m[0m policy                             = (known after apply)
+      [32m+[0m[0m rotation_period_in_days            = (known after apply)
+      [32m+[0m[0m tags                               = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+      [32m+[0m[0m tags_all                           = {
+          [32m+[0m[0m "Environment" = "dev"
+          [32m+[0m[0m "ManagedBy"   = "terraform"
+          [32m+[0m[0m "Name"        = "fluss-eks-cluster"
+          [32m+[0m[0m "Project"     = "fluss-deployment"
+        }
+    }
+
+[1mPlan:[0m 89 to add, 0 to change, 0 to destroy.
+[0m
+Changes to Outputs:
+  [32m+[0m[0m coordinator_node_group_id   = (known after apply)
+  [32m+[0m[0m demo_image_repository       = "343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss-demo"
+  [32m+[0m[0m ebs_csi_driver_installed    = true
+  [32m+[0m[0m ebs_csi_driver_role_arn     = (known after apply)
+  [32m+[0m[0m ecr_fluss_repository_url    = (known after apply)
+  [32m+[0m[0m ecr_repository_url          = (known after apply)
+  [32m+[0m[0m eks_cluster_endpoint        = (known after apply)
+  [32m+[0m[0m eks_cluster_name            = "fluss-eks-cluster"
+  [32m+[0m[0m fluss_coordinator_service   = "coordinator-server-hs.fluss.svc.cluster.local:9124"
+  [32m+[0m[0m fluss_image_repository      = "343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss"
+  [32m+[0m[0m grafana_credentials         = "Username: admin, Password: admin123"
+  [32m+[0m[0m grafana_url                 = "Access Grafana via: kubectl port-forward -n monitoring svc/prometheus-grafana 3000:80"
+  [32m+[0m[0m monitoring_namespace        = "monitoring"
+  [32m+[0m[0m namespace                   = "fluss"
+  [32m+[0m[0m private_subnet_ids          = [
+      [32m+[0m[0m (known after apply),
+      [32m+[0m[0m (known after apply),
+    ]
+  [32m+[0m[0m prometheus_url              = "http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090"
+  [32m+[0m[0m public_subnet_ids           = [
+      [32m+[0m[0m (known after apply),
+      [32m+[0m[0m (known after apply),
+    ]
+  [32m+[0m[0m tablet_server_node_group_id = (known after apply)
+  [32m+[0m[0m vpc_id                      = "vpc-0becf5985eacd4a4d"
+  [32m+[0m[0m zookeeper_service           = "zk-svc.fluss.svc.cluster.local:2181"
+[0m[1mmodule.vpc.aws_route_table.private[1]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1maws_ecr_repository.demo_app: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_route_table.default[0]: Creating...[0m[0m
+[0m[1maws_ecr_repository.fluss: Creating...[0m[0m
+[0m[1mmodule.eks.aws_cloudwatch_log_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group.cluster[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group.node[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_network_acl.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_security_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_route_table.default[0]: Creation complete after 2s [id=rtb-0f05f478f136c06b4][0m
+[0m[1mmodule.vpc.aws_route_table.private[0]: Creating...[0m[0m
+[0m[1maws_ecr_repository.demo_app: Creation complete after 2s [id=fluss-demo][0m
+[0m[1maws_ecr_repository.fluss: Creation complete after 2s [id=fluss][0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_cloudwatch_log_group.this[0]: Creation complete after 2s [id=/aws/eks/fluss-eks-cluster/cluster][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role.this[0]: Creation complete after 3s [id=fluss-eks-cluster-cluster-20251126160820300400000002][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table.private[1]: Creation complete after 3s [id=rtb-0bbb2aed92ccaf84c][0m
+[0m[1mmodule.vpc.aws_route_table.public[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_security_group.this[0]: Creation complete after 4s [id=sg-0f3c41fcd0db8d61f][0m
+[0m[1mmodule.vpc.aws_internet_gateway.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Creation complete after 2s [id=subnet-0716e289bff019c85][0m
+[0m[1maws_ecr_lifecycle_policy.fluss: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Creation complete after 2s [id=subnet-0f97b3e4ec5fe2f5c][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Creation complete after 2s [id=subnet-057e579e47b616c65][0m
+[0m[1maws_ecr_lifecycle_policy.demo_app: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Creation complete after 1s [id=subnet-0e58dd073b5b5ce2c][0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSVPCResourceController"]: Creating...[0m[0m
+[0m[1maws_ecr_lifecycle_policy.fluss: Creation complete after 1s [id=fluss][0m
+[0m[1mmodule.eks.module.kms.data.aws_iam_policy_document.this[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.kms.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=3619463266][0m
+[0m[1mmodule.eks.module.kms.aws_kms_key.this[0]: Creating...[0m[0m
+[0m[1maws_ecr_lifecycle_policy.demo_app: Creation complete after 1s [id=fluss-demo][0m
+[0m[1mmodule.vpc.aws_route_table.private[0]: Creation complete after 3s [id=rtb-0ed52b3a9d129e99f][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table.public[0]: Creation complete after 2s [id=rtb-0cdc47d374575f8bb][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Creation complete after 1s [id=fluss-eks-cluster-cluster-20251126160820300400000002-20251126160824540300000007][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_internet_gateway.this[0]: Creation complete after 1s [id=igw-03a58ae87ab878c5a][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSVPCResourceController"]: Creation complete after 1s [id=fluss-eks-cluster-cluster-20251126160820300400000002-20251126160824906400000008][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group.node[0]: Creation complete after 6s [id=sg-0cb61b3d47c31b78a][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_default_network_acl.this[0]: Creation complete after 6s [id=acl-038c6cfa8eb7374f1][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group.cluster[0]: Creation complete after 6s [id=sg-0029bd32728a1c547][0m
+[0m[1mmodule.vpc.aws_route.public_internet_gateway[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Creation complete after 1s [id=rtbassoc-056276bd0a4eeb500][0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Creation complete after 1s [id=rtbassoc-040cf84d0b2ee515f][0m
+[0m[1mmodule.vpc.aws_eip.nat[1]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role.this[0]: Creation complete after 1s [id=flink-jobmanager-eks-node-group-20251126160825126700000009][0m
+[0m[1mmodule.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role.this[0]: Creation complete after 1s [id=flink-taskmanager-eks-node-group-2025112616082517860000000a][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Creation complete after 1s [id=rtbassoc-0c256fe75981a7664][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role.this[0]: Creation complete after 2s [id=tablet-server-eks-node-group-2025112616082522620000000b][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role.this[0]: Creation complete after 2s [id=coordinator-eks-node-group-2025112616082540730000000c][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-018e937ab00b1a06a][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Creation complete after 2s [id=sgrule-686155314][0m
+[0m[1mmodule.vpc.aws_route.public_internet_gateway[0]: Creation complete after 2s [id=r-rtb-0cdc47d374575f8bb1080289494][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Creation complete after 3s [id=eipalloc-032015cd32aec722e][0m
+[0m[1mmodule.vpc.aws_eip.nat[1]: Creation complete after 3s [id=eipalloc-02ca3027addec1c9a][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Creation complete after 3s [id=sgrule-3320881625][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_443"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Creation complete after 3s [id=sgrule-2706477586][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 1s [id=flink-jobmanager-eks-node-group-20251126160825126700000009-2025112616083030010000000d][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 0s [id=tablet-server-eks-node-group-2025112616082522620000000b-2025112616083089730000000e][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Creation complete after 4s [id=sgrule-4024336870][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 1s [id=coordinator-eks-node-group-2025112616082540730000000c-2025112616083149240000000f][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 1s [id=flink-taskmanager-eks-node-group-2025112616082517860000000a-20251126160831535900000010][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creation complete after 1s [id=flink-jobmanager-eks-node-group-20251126160825126700000009-20251126160832243900000011][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creation complete after 1s [id=coordinator-eks-node-group-2025112616082540730000000c-20251126160832243900000012][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Creation complete after 6s [id=sgrule-1266754057][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 0s [id=tablet-server-eks-node-group-2025112616082522620000000b-20251126160832863300000014][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creation complete after 0s [id=flink-jobmanager-eks-node-group-20251126160825126700000009-20251126160832855100000013][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creation complete after 0s [id=coordinator-eks-node-group-2025112616082540730000000c-20251126160833013400000015][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 1s [id=flink-taskmanager-eks-node-group-2025112616082517860000000a-20251126160833442300000016][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 1s [id=coordinator-eks-node-group-2025112616082540730000000c-20251126160833479600000017][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 1s [id=flink-jobmanager-eks-node-group-20251126160825126700000009-20251126160833658700000018][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Creation complete after 7s [id=sgrule-2951848570][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creation complete after 0s [id=flink-taskmanager-eks-node-group-2025112616082517860000000a-20251126160833990000000019][0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creation complete after 0s [id=tablet-server-eks-node-group-2025112616082522620000000b-2025112616083411480000001a][0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"]: Creation complete after 1s [id=tablet-server-eks-node-group-2025112616082522620000000b-2025112616083428950000001c][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"]: Creation complete after 1s [id=flink-taskmanager-eks-node-group-2025112616082517860000000a-2025112616083441530000001e][0m
+[0m[1mmodule.eks.module.kms.aws_kms_key.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Creation complete after 7s [id=sgrule-3601636856][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Creation complete after 9s [id=sgrule-535755374][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Creation complete after 10s [id=sgrule-1952189247][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_443"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Creation complete after 11s [id=sgrule-2103460458][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_443"]: Creation complete after 12s [id=sgrule-1154467977][0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.kms.aws_kms_key.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.kms.aws_kms_key.this[0]: Creation complete after 28s [id=fea32ad0-7fbe-4ef1-8c97-954e372745a0][0m
+[0m[1mmodule.eks.module.kms.aws_kms_alias.this["cluster"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_policy.cluster_encryption[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.kms.aws_kms_alias.this["cluster"]: Creation complete after 1s [id=alias/eks/fluss-eks-cluster][0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_iam_policy.cluster_encryption[0]: Creation complete after 2s [id=arn:aws:iam::343218179954:policy/fluss-eks-cluster-cluster-ClusterEncryption2025112616085346830000001f][0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Creation complete after 0s [id=fluss-eks-cluster-cluster-20251126160820300400000002-20251126160854960100000020][0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[0]: Creation complete after 1m49s [id=nat-096c6f5a29c65d6bd][0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.vpc.aws_nat_gateway.this[1]: Creation complete after 1m50s [id=nat-0f796a267ef2d74d9][0m
+[0m[1mmodule.vpc.aws_route.private_nat_gateway[0]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route.private_nat_gateway[1]: Creating...[0m[0m
+[0m[1mmodule.vpc.aws_route.private_nat_gateway[1]: Creation complete after 1s [id=r-rtb-0bbb2aed92ccaf84c1080289494][0m
+[0m[1mmodule.vpc.aws_route.private_nat_gateway[0]: Creation complete after 1s [id=r-rtb-0ed52b3a9d129e99f1080289494][0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [1m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [2m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [3m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [4m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [5m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [6m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [7m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [8m50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Still creating... [9m40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Creation complete after 9m48s [id=fluss-eks-cluster][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["coredns"]: Reading...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Creating...[0m[0m
+[0m[1mmodule.eks.time_sleep.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...[0m[0m
+[0m[1mmodule.eks.data.tls_certificate.this[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 1s [id=kube-proxy][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 2s [id=coredns][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 1s [id=vpc-cni][0m
+[0m[1mmodule.eks.data.tls_certificate.this[0]: Read complete after 1s [id=4687b9863b4f2caa907e2ad6c9ffcf73433dc367][0m
+[0m[1mmodule.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"]: Creation complete after 2s [id=sg-0af87279a452f1866,ManagedBy][0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Creation complete after 2s [id=sg-0af87279a452f1866,Environment][0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Creation complete after 2s [id=sg-0af87279a452f1866,Project][0m
+[0m[1mmodule.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Creation complete after 1s [id=arn:aws:iam::343218179954:oidc-provider/oidc.eks.us-west-2.amazonaws.com/id/4492FAF505852A24367AACC18B850BAD][0m
+[0m[1mmodule.eks.time_sleep.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.time_sleep.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.time_sleep.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.time_sleep.this[0]: Creation complete after 31s [id=2025-11-26T16:19:11Z][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_launch_template.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_launch_template.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_launch_template.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_launch_template.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_launch_template.this[0]: Creation complete after 8s [id=lt-0f11f7ecd96107019][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_launch_template.this[0]: Creation complete after 8s [id=lt-0c91cd07ef1f09d66][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_launch_template.this[0]: Creation complete after 8s [id=lt-0d003b91d9e2c793d][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_launch_template.this[0]: Creation complete after 8s [id=lt-0f8f514cad79137a5][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Creating...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["coordinator"].aws_eks_node_group.this[0]: Creation complete after 1m43s [id=fluss-eks-cluster:coordinator-2025112616192031950000002b][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["tablet_server"].aws_eks_node_group.this[0]: Creation complete after 1m44s [id=fluss-eks-cluster:tablet-server-20251126161920319300000029][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Still creating... [1m50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Still creating... [1m50s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_jobmanager"].aws_eks_node_group.this[0]: Creation complete after 1m53s [id=fluss-eks-cluster:flink-jobmanager-2025112616192031970000002d][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["flink_taskmanager"].aws_eks_node_group.this[0]: Creation complete after 1m54s [id=fluss-eks-cluster:flink-taskmanager-2025112616192031970000002f][0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Creating...[0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Creating...[0m[0m
+[0m[1mmodule.eks.kubernetes_config_map_v1_data.aws_auth[0]: Creating...[0m[0m
+[0m[1mmodule.eks.kubernetes_config_map_v1_data.aws_auth[0]: Creation complete after 2s [id=kube-system/aws-auth][0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Creation complete after 17s [id=fluss-eks-cluster:coredns][0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Creation complete after 28s [id=fluss-eks-cluster:kube-proxy][0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [50s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mmodule.eks.aws_eks_addon.this["vpc-cni"]: Creation complete after 1m10s [id=fluss-eks-cluster:vpc-cni][0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_region.current: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_region.current: Read complete after 0s [id=us-west-2][0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_iam_policy_document.ebs_csi[0]: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_iam_policy_document.ebs_csi[0]: Read complete after 0s [id=4189668531][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_policy.ebs_csi[0]: Creating...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_caller_identity.current: Read complete after 2s [id=343218179954][0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_iam_policy_document.this[0]: Reading...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].data.aws_iam_policy_document.this[0]: Read complete after 0s [id=2415743742][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role.this[0]: Creating...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_policy.ebs_csi[0]: Creation complete after 2s [id=arn:aws:iam::343218179954:policy/AmazonEKS_EBS_CSI_Policy-20251126162223735500000034][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role.this[0]: Creation complete after 1s [id=fluss-eks-cluster-ebs-csi-driver][0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role_policy_attachment.ebs_csi[0]: Creating...[0m[0m
+[0m[1mmodule.ebs_csi_irsa[0].aws_iam_role_policy_attachment.ebs_csi[0]: Creation complete after 1s [id=fluss-eks-cluster-ebs-csi-driver-20251126162227420800000035][0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Creating...[0m[0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Still creating... [10s elapsed][0m[0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Still creating... [20s elapsed][0m[0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Still creating... [30s elapsed][0m[0m
+[0m[1maws_eks_addon.ebs_csi_driver[0]: Creation complete after 37s [id=fluss-eks-cluster:aws-ebs-csi-driver][0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mArgument is deprecated[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  with module.eks.aws_iam_role.this[0],
+[33m│[0m [0m  on .terraform/modules/eks/main.tf line 293, in resource "aws_iam_role" "this":
+[33m│[0m [0m 293: resource "aws_iam_role" "this" [4m{[0m[0m
+[33m│[0m [0m
+[33m│[0m [0minline_policy is deprecated. Use the aws_iam_role_policy resource instead.
+[33m│[0m [0mIf Terraform should exclusively manage all inline policy associations (the
+[33m│[0m [0mcurrent behavior of this argument), use the aws_iam_role_policies_exclusive
+[33m│[0m [0mresource as well.
+[33m│[0m [0m
+[33m│[0m [0m(and 7 more similar warnings elsewhere)
+[33m╵[0m[0m
+[0m[1m[32m
+Apply complete! Resources: 89 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0mcoordinator_node_group_id = "fluss-eks-cluster:coordinator-2025112616192031950000002b"
+demo_image_repository = "343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss-demo"
+ebs_csi_driver_installed = true
+ebs_csi_driver_role_arn = "arn:aws:iam::343218179954:role/fluss-eks-cluster-ebs-csi-driver"
+ecr_fluss_repository_url = "343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss"
+ecr_repository_url = "343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss-demo"
+eks_cluster_endpoint = "https://4492FAF505852A24367AACC18B850BAD.gr7.us-west-2.eks.amazonaws.com"
+eks_cluster_name = "fluss-eks-cluster"
+fluss_coordinator_service = "coordinator-server-hs.fluss.svc.cluster.local:9124"
+fluss_image_repository = "343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss"
+grafana_credentials = "Username: admin, Password: admin123"
+grafana_url = "Access Grafana via: kubectl port-forward -n monitoring svc/prometheus-grafana 3000:80"
+monitoring_namespace = "monitoring"
+namespace = "fluss"
+private_subnet_ids = [
+  "subnet-0f97b3e4ec5fe2f5c",
+  "subnet-0716e289bff019c85",
+]
+prometheus_url = "http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090"
+public_subnet_ids = [
+  "subnet-057e579e47b616c65",
+  "subnet-0e58dd073b5b5ce2c",
+]
+tablet_server_node_group_id = "fluss-eks-cluster:tablet-server-20251126161920319300000029"
+vpc_id = "vpc-0becf5985eacd4a4d"
+zookeeper_service = "zk-svc.fluss.svc.cluster.local:2181"
