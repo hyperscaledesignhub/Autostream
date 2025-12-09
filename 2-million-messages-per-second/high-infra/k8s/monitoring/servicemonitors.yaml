@@ -1,0 +1,93 @@
+# ServiceMonitor for Producer metrics
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: fluss-producer-metrics
+  namespace: fluss
+  labels:
+    app: fluss-producer
+spec:
+  selector:
+    matchLabels:
+      app: fluss-producer
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
+---
+# ServiceMonitor for Flink JobManager metrics
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: flink-jobmanager-metrics
+  namespace: fluss
+  labels:
+    app: flink
+    component: jobmanager
+spec:
+  selector:
+    matchLabels:
+      app: flink
+      component: jobmanager
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
+---
+# ServiceMonitor for Flink TaskManager metrics
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: flink-taskmanager-metrics
+  namespace: fluss
+  labels:
+    app: flink
+    component: taskmanager
+spec:
+  selector:
+    matchLabels:
+      app: flink
+      component: taskmanager
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
+---
+# ServiceMonitor for Fluss Coordinator metrics
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: fluss-coordinator-metrics
+  namespace: fluss
+  labels:
+    app: fluss
+    component: coordinator
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: fluss
+      app.kubernetes.io/component: coordinator
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
+---
+# ServiceMonitor for Fluss Tablet Server metrics
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: fluss-tablet-metrics
+  namespace: fluss
+  labels:
+    app: fluss
+    component: tablet-server
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: fluss
+      app.kubernetes.io/component: tablet
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
+
