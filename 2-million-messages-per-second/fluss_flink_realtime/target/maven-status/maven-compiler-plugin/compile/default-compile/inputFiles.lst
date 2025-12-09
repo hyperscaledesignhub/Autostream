@@ -1,0 +1,13 @@
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/model/SensorData.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/producer/FlussSensorProducerApp.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/model/SensorDataMinimal.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/model/SensorDataRealtimePlatform.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/producer/FlussSensorProducerAppMultiInstance.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/inspect/FlussTableLogPeek.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/inspect/FlussTableBucketChecker.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/inspect/FlussMetadataInspector.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/setup/CreateTableWithBuckets.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/inspect/FlussPrimaryKeySnapshotPeek.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/producer/ProducerMetrics.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/flink/FlinkMetrics.java
+/Users/vijayabhaskarv/IOT/FLUSS/demos/demo/fluss_flink_realtime_demo/src/main/java/com/example/fluss/flink/FlinkSensorAggregatorJob.java
