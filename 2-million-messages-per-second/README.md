@@ -441,6 +441,33 @@ These diagrams collectively demonstrate:
 - **Efficiency:** Balanced resource utilization across all components
 - **Scalability:** Linear scaling with additional resources
 
+## Infrastructure Costs
+
+The benchmark infrastructure consists of the following AWS EC2 instances running 24/7 for one month (30 days):
+
+### Instance Breakdown
+
+1. **Fluss Tablet Servers (i7i.8xlarge)**
+   - **Nodes:** 3 instances
+   - **Hourly Cost:** $3.02 per hour
+   - **Monthly Cost:** 3 × 24 × 30 × $3.02 = **$6,523.20**
+
+2. **Flink TaskManagers (C5.4xlarge)**
+   - **Nodes:** 6 instances
+   - **Hourly Cost:** $0.68 per hour
+   - **Monthly Cost:** 6 × 24 × 30 × $0.68 = **$2,937.60**
+
+3. **Producer Nodes (C5.3xlarge)**
+   - **Nodes:** 8 instances
+   - **Hourly Cost:** $0.35 per hour
+   - **Monthly Cost:** 8 × 24 × 30 × $0.35 = **$2,016.00**
+
+### Total Monthly Cost
+
+**Total Infrastructure Cost:** $6,523.20 + $2,937.60 + $2,016.00 = **$11,476.80/month**
+
+*Note: This cost calculation does not include additional AWS services such as EKS cluster management, S3 storage, networking (VPC, NAT Gateway), load balancers, or monitoring stack (Prometheus/Grafana). Actual costs may vary based on AWS pricing changes and additional resource usage.*
+
 ## Deployment
 
 For deployment instructions, see:
