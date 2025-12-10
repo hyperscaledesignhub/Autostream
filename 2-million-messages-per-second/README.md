@@ -11,7 +11,7 @@
   - Fluss Table with 128 partitions across 3 tablet servers
   - Flink Aggregation Job with 4 operators
   
-  See bench-mark/ folder for performance diagrams and detailed metrics.
+  See bench-mark-images/ folder for performance diagrams and detailed metrics.
 -->
 
 # 2 Million Rows Per Second Benchmark
@@ -215,7 +215,7 @@ The following diagrams show detailed performance metrics from the 2 million rows
 
 ### Deployment Diagram
 
-![Deployment Architecture](bench-mark/10-Fluss%20Deployment.png)
+![Deployment Architecture](bench-mark-images/10-Fluss%20Deployment.png)
 
 **What it shows:**
 This diagram illustrates the complete architecture and deployment topology of the benchmark setup. It shows:
@@ -230,7 +230,7 @@ This diagram illustrates the complete architecture and deployment topology of th
 
 ### 1. Producer Throughput
 
-![Producer Throughput](bench-mark/1-Fluss-Producer.png)
+![Producer Throughput](bench-mark-images/1-Fluss-Producer.png)
 
 **What it shows:**
 This diagram monitors the data generation rate from all producer instances. It displays:
@@ -249,7 +249,7 @@ This diagram monitors the data generation rate from all producer instances. It d
 
 ### 2. Flink Consumer
 
-![Flink Consumer](bench-mark/2-flink-consumer.png)
+![Flink Consumer](bench-mark-images/2-flink-consumer.png)
 
 **What it shows:**
 This diagram shows how Flink consumes data from the Fluss table. It displays:
@@ -268,7 +268,7 @@ This diagram shows how Flink consumes data from the Fluss table. It displays:
 
 ### 3. Flink Overall Operator Throughput
 
-![Flink Operator Throughput](bench-mark/3-flink-overall-operator-throughput.png)
+![Flink Operator Throughput](bench-mark-images/3-flink-overall-operator-throughput.png)
 
 **What it shows:**
 This diagram shows throughput across all Flink operators in the pipeline. It displays:
@@ -287,7 +287,7 @@ This diagram shows throughput across all Flink operators in the pipeline. It dis
 
 ### 4. Flink End-to-End Data Lag
 
-![Flink Data Lag](bench-mark/4-flink-end-to-end-data-lag.png)
+![Flink Data Lag](bench-mark-images/4-flink-end-to-end-data-lag.png)
 
 **What it shows:**
 This diagram measures the latency from data production to final aggregation output. It displays:
@@ -306,7 +306,7 @@ This diagram measures the latency from data production to final aggregation outp
 
 ### 5. Flink Back Pressure
 
-![Flink Back Pressure](bench-mark/5-flink-back-pressure.png)
+![Flink Back Pressure](bench-mark-images/5-flink-back-pressure.png)
 
 **What it shows:**
 This diagram monitors backpressure indicators to identify bottlenecks in the Flink pipeline. It displays:
@@ -325,7 +325,7 @@ This diagram monitors backpressure indicators to identify bottlenecks in the Fli
 
 ### 6. Fluss Tablet Server Throughput
 
-![Fluss Tablet Server Throughput](bench-mark/5-fluss-tablet-server-throughput.png)
+![Fluss Tablet Server Throughput](bench-mark-images/5-fluss-tablet-server-throughput.png)
 
 **What it shows:**
 This diagram shows the throughput and performance of Fluss tablet servers handling writes. It displays:
@@ -344,7 +344,7 @@ This diagram shows the throughput and performance of Fluss tablet servers handli
 
 ### 7. Fluss Tablet Server Request by Type
 
-![Fluss Tablet Server Requests](bench-mark/6-Fluss_tablet-server-request-by-type.png)
+![Fluss Tablet Server Requests](bench-mark-images/6-Fluss_tablet-server-request-by-type.png)
 
 **What it shows:**
 This diagram breaks down tablet server requests by operation type to understand workload patterns. It displays:
@@ -367,7 +367,7 @@ This diagram breaks down tablet server requests by operation type to understand 
 
 ### 8. Fluss Tablet Server CPU
 
-![Fluss Tablet Server CPU](bench-mark/7-Fluss-tablet-server-CPU.png)
+![Fluss Tablet Server CPU](bench-mark-images/7-Fluss-tablet-server-CPU.png)
 
 **What it shows:**
 This diagram monitors CPU utilization of tablet servers to ensure they're not bottlenecked. It displays:
@@ -386,7 +386,7 @@ This diagram monitors CPU utilization of tablet servers to ensure they're not bo
 
 ### 9. Flink Aggregation Input
 
-![Flink Aggregation Input](bench-mark/8-Flink_aggregation-In.png)
+![Flink Aggregation Input](bench-mark-images/8-Flink_aggregation-In.png)
 
 **What it shows:**
 This diagram shows the input rate to the Flink aggregation operators (window and sink). It displays:
@@ -405,7 +405,7 @@ This diagram shows the input rate to the Flink aggregation operators (window and
 
 ### 9. Flink Aggregation Output
 
-![Flink Aggregation Output](bench-mark/9-Flink-aggregation-out.png)
+![Flink Aggregation Output](bench-mark-images/9-Flink-aggregation-out.png)
 
 **What it shows:**
 This diagram shows the output rate from Flink aggregation (aggregated results per window). It displays:
