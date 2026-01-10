@@ -1,3 +1,20 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 #!/bin/bash
 set -euo pipefail
 
@@ -6,20 +23,43 @@ set -euo pipefail
 # 2. fluss (Apache Fluss image)
 #
 # Usage:
-#   ./push-images-to-ecr.sh --all              # Push both images
-#   ./push-images-to-ecr.sh --producer-only    # Push only producer image
-#   ./push-images-to-ecr.sh --fluss-only       # Push only Fluss image
+#   ./high-infra/push-images-to-ecr.sh --all              # Push both images
+#   ./high-infra/push-images-to-ecr.sh --producer-only    # Push only producer image
+#   ./high-infra/push-images-to-ecr.sh --fluss-only       # Push only Fluss image
+#
+# IMPORTANT: This script must be run from the 2-million-messages-per-second directory
 
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-DEMO_DIR="${SCRIPT_DIR}/../../demos/demo/fluss_flink_realtime_demo"
+# Get the 2-million-messages-per-second directory (parent of high-infra)
+BASE_DIR=$(cd "${SCRIPT_DIR}/.." && pwd)
+DEMO_DIR="${BASE_DIR}/fluss_flink_realtime"
 AWS_REGION=${AWS_REGION:-us-west-2}
 FLUSS_VERSION=${FLUSS_VERSION:-0.8.0-incubating}
+ECR_INFO_FILE="${BASE_DIR}/ecr-repositories.txt"
 
 # Colors for output
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
+
+# Validate we're in the correct directory structure
+if [ ! -d "${DEMO_DIR}" ]; then
+    echo -e "${RED}Error: Cannot find fluss_flink_realtime directory${NC}"
+    echo -e "${RED}Expected: ${DEMO_DIR}${NC}"
+    echo -e "${RED}Please run this script from the 2-million-messages-per-second directory${NC}"
+    exit 1
+fi
+
+# Validate we're running from 2-million-messages-per-second directory
+EXPECTED_BASE_NAME="2-million-messages-per-second"
+ACTUAL_BASE_NAME=$(basename "${BASE_DIR}")
+if [ "${ACTUAL_BASE_NAME}" != "${EXPECTED_BASE_NAME}" ]; then
+    echo -e "${RED}Error: Script must be run from the ${EXPECTED_BASE_NAME} directory${NC}"
+    echo -e "${RED}Current directory: ${BASE_DIR}${NC}"
+    echo -e "${RED}Please run: cd ${EXPECTED_BASE_NAME} && ./high-infra/push-images-to-ecr.sh${NC}"
+    exit 1
+fi
 
 # Parse command line arguments
 PUSH_DEMO=false
@@ -94,13 +134,16 @@ echo -e "${GREEN}✓ ECR repositories ready${NC}\n"
 # Build and push producer application image
 if [ "$PUSH_DEMO" = true ]; then
     echo -e "${YELLOW}[3/5] Building producer application image...${NC}"
-    if [ ! -f "${DEMO_DIR}/target/fluss-flink-realtime-demo.jar" ]; then
-        echo -e "${YELLOW}Building JAR...${NC}"
-        cd "${DEMO_DIR}"
-        mvn clean package
-    else
-        echo -e "${GREEN}JAR already exists${NC}"
+    echo -e "${YELLOW}Step 1: Building JAR from source (clean build)...${NC}"
+    cd "${DEMO_DIR}"
+    mvn clean package
+    JAR_FILE=$(find "${DEMO_DIR}/target" -name "fluss-flink-realtime-demo*.jar" -type f 2>/dev/null | head -1)
+    if [ -z "${JAR_FILE}" ] || [ ! -f "${JAR_FILE}" ]; then
+        echo -e "${RED}Error: JAR file not found after build${NC}"
+        exit 1
     fi
+    echo -e "${GREEN}✓ JAR built successfully: ${JAR_FILE}${NC}"
+    echo ""
 
     cd "${DEMO_DIR}"
     echo -e "${YELLOW}Building Docker image for linux/amd64...${NC}"
@@ -147,7 +190,57 @@ if [ "$PUSH_FLUSS" = true ]; then
     echo -e "  ${FLUSS_REPO}:latest"
 fi
 echo -e ""
-echo -e "Update terraform.tfvars with:"
+
+# Save ECR repository details to file
+echo -e "${YELLOW}[5/5] Saving ECR repository details to ${ECR_INFO_FILE}...${NC}"
+cat > "${ECR_INFO_FILE}" << EOF
+# ECR Repository Details
+# Generated on: $(date)
+# AWS Account ID: ${AWS_ACCOUNT_ID}
+# AWS Region: ${AWS_REGION}
+
+EOF
+
+if [ "$PUSH_DEMO" = true ]; then
+    cat >> "${ECR_INFO_FILE}" << EOF
+# Demo/Producer Image Repository
+DEMO_IMAGE_REPOSITORY="${DEMO_REPO}"
+DEMO_IMAGE_TAG="latest"
+
+# For terraform.tfvars:
+demo_image_repository = "${DEMO_REPO}"
+
+EOF
+fi
+
+if [ "$PUSH_FLUSS" = true ]; then
+    cat >> "${ECR_INFO_FILE}" << EOF
+# Fluss Image Repository
+FLUSS_IMAGE_REPOSITORY="${FLUSS_REPO}"
+FLUSS_IMAGE_VERSION="${FLUSS_VERSION}"
+
+# For terraform.tfvars:
+fluss_image_repository = "${FLUSS_REPO}"
+use_ecr_for_fluss = true
+
+EOF
+fi
+
+cat >> "${ECR_INFO_FILE}" << EOF
+# Full ECR Base URL
+ECR_BASE="${ECR_BASE}"
+
+# To use these values in shell scripts:
+# source ${ECR_INFO_FILE}
+# echo \${DEMO_IMAGE_REPOSITORY}
+EOF
+
+echo -e "${GREEN}✓ ECR repository details saved to ${ECR_INFO_FILE}${NC}"
+echo -e ""
+echo -e "To use these values:"
+echo -e "  source ${ECR_INFO_FILE}"
+echo -e ""
+echo -e "Or update terraform.tfvars with:"
 if [ "$PUSH_DEMO" = true ]; then
     echo -e "  demo_image_repository = \"${DEMO_REPO}\""
 fi

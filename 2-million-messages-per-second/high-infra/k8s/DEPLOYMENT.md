@@ -1,3 +1,21 @@
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+
 # Complete Deployment Guide
 
 This guide walks through deploying the entire Fluss + Flink stack on AWS EKS.
@@ -128,19 +146,19 @@ done
 
 ## Step 5: Deploy Multi-Instance Producer
 
-Deploy 8 producer instances (2 per node across 4 producer nodes) with 96 buckets:
+Deploy 8 producer instances (2 per node across 4 producer nodes) with 128 buckets:
 
 ```bash
 cd aws-deploy-fluss/high-infra/k8s/jobs
 
-# Deploy multi-instance producer (8 instances total, 2 per node, 96 buckets)
-export BUCKETS=96
+# Deploy multi-instance producer (8 instances total, 2 per node, 128 buckets)
+export BUCKETS=128
 ./deploy-producer-multi-instance.sh
 
 # Or with custom parameters:
 export PRODUCER_RATE=250000
 export TOTAL_PRODUCERS=8
-export BUCKETS=96
+export BUCKETS=128
 ./deploy-producer-multi-instance.sh
 ```
 
@@ -148,7 +166,7 @@ This will:
 - Deploy 8 producer jobs (instance IDs 0-7)
 - Ensure 2 pods per producer node using topology spread constraints
 - Each producer runs at the specified rate (default: 250K records/sec per instance)
-- Uses 96 buckets for the Fluss table (must match table bucket count)
+- Uses 128 buckets for the Fluss table (must match table bucket count)
 
 **Verify producer deployment:**
 ```bash

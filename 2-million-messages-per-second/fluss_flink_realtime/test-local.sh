@@ -1,3 +1,20 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 #!/bin/bash
 
 # Local test script for Fluss producer and Flink job
@@ -80,7 +97,7 @@ java --add-opens=java.base/java.util=ALL-UNNAMED \
      --add-opens=java.base/java.nio=ALL-UNNAMED \
      --add-opens=java.base/java.time=ALL-UNNAMED \
      -cp "${JAR_PATH}" \
-     com.example.fluss.setup.CreateTableWithBuckets \
+     org.apache.fluss.benchmarks.setup.CreateTableWithBuckets \
      localhost:9123 iot sensor_readings 48 true
 
 if [ $? -eq 0 ]; then
@@ -98,7 +115,7 @@ java --add-opens=java.base/java.util=ALL-UNNAMED \
      --add-opens=java.base/java.nio=ALL-UNNAMED \
      --add-opens=java.base/java.time=ALL-UNNAMED \
      -cp "${JAR_PATH}" \
-     com.example.fluss.inspect.FlussMetadataInspector localhost:9123 iot 2>/dev/null | grep -q "sensor_readings" && \
+     org.apache.fluss.benchmarks.inspect.FlussMetadataInspector localhost:9123 iot 2>/dev/null | grep -q "sensor_readings" && \
      echo -e "${GREEN}✓ Table verified${NC}" || echo -e "${YELLOW}Warning: Could not verify table${NC}"
 echo ""
 
@@ -111,7 +128,7 @@ java --add-opens=java.base/java.util=ALL-UNNAMED \
      --add-opens=java.base/java.nio=ALL-UNNAMED \
      --add-opens=java.base/java.time=ALL-UNNAMED \
      -cp "${JAR_PATH}" \
-     com.example.fluss.producer.FlussSensorProducerAppMultiInstance \
+     org.apache.fluss.benchmarks.producer.FlussSensorProducerAppMultiInstance \
      --bootstrap localhost:9123 \
      --database iot \
      --table sensor_readings \
@@ -136,7 +153,7 @@ if [ ! -d "${FLINK_DIR}" ]; then
     echo "Skipping Flink job. You can run it manually:"
     echo ""
     echo "  ${FLINK_DIR}/bin/flink run \\"
-    echo "    -c com.example.fluss.flink.FlinkSensorAggregatorJob \\"
+    echo "    -c org.apache.fluss.benchmarks.flink.FlinkSensorAggregatorJob \\"
     echo "    ${JAR_PATH} \\"
     echo "    --bootstrap localhost:9123 --database iot --table sensor_readings --window-minutes 1"
     echo ""
@@ -160,7 +177,7 @@ fi
 
 # Submit Flink job
 "${FLINK_DIR}/bin/flink run" \
-    -c com.example.fluss.flink.FlinkSensorAggregatorJob \
+    -c org.apache.fluss.benchmarks.flink.FlinkSensorAggregatorJob \
     "${JAR_PATH}" \
     --bootstrap localhost:9123 \
     --database iot \

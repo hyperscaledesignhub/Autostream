@@ -1,0 +1,18 @@
+# ECR Repository Details
+# Generated on: Sat Jan 10 14:35:19 IST 2026
+# AWS Account ID: 343218179954
+# AWS Region: us-west-2
+
+# Demo/Producer Image Repository
+DEMO_IMAGE_REPOSITORY="343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss-demo"
+DEMO_IMAGE_TAG="latest"
+
+# For terraform.tfvars:
+demo_image_repository = "343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss-demo"
+
+# Full ECR Base URL
+ECR_BASE="343218179954.dkr.ecr.us-west-2.amazonaws.com"
+
+# To use these values in shell scripts:
+# source /Users/vijayabhaskarv/IOT/FLUSS/demos/2-million-messages-per-second/ecr-repositories.txt
+# echo ${DEMO_IMAGE_REPOSITORY}

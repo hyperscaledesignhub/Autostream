@@ -1,8 +1,25 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: flink-config
-  namespace: fluss
+  namespace: ${NAMESPACE}
 data:
   flink-conf.yaml: |
     # Flink Configuration with Prometheus Metrics Reporter
@@ -17,6 +34,9 @@ data:
     taskmanager.memory.process.size: 24g
     taskmanager.memory.task.off-heap.size: 4g
     taskmanager.memory.framework.off-heap.size: 2g
+    taskmanager.memory.network.fraction: 0.2
+    taskmanager.memory.network.min: 1gb
+    taskmanager.memory.network.max: 4gb
     taskmanager.numberOfTaskSlots: 32
     parallelism.default: 192
     
@@ -53,19 +73,28 @@ data:
     # This helps with low watermark issues when some partitions are idle
     pipeline.auto-watermark-interval: 200ms
     
-    # Checkpointing Configuration - Using S3 with IRSA
-    # NOTE: Bucket name will be replaced by submit-job-from-image.sh script
-    # Format: s3://<cluster-name>-flink-state-<account-id>/flink-checkpoints/<cluster-name>/
+    # Network Configuration for High Throughput (2M+ messages/sec)
+    # ============================================================
+    # Network buffer configuration for high-throughput scenarios
+    # Memory allocation is handled by taskmanager.memory.network.* above
+    taskmanager.network.memory.buffers-per-channel: 2
+    taskmanager.network.memory.floating-buffers-per-gate: 8
+    
+    # Network buffer timeout - increase for high throughput
+    taskmanager.network.request-backoff.max: 10000
+    taskmanager.network.request-backoff.initial: 100
+    
+    # Network stack optimizations
+    taskmanager.network.detailed-metrics: false
+    
+    # Checkpointing Configuration - DISABLED for performance
+    # Checkpointing disabled to reduce overhead and improve throughput
+    # NOTE: This disables fault tolerance - job will restart from beginning on failure
     state.backend: rocksdb
     state.backend.incremental: true
-    state.checkpoints.dir: s3://fluss-eks-cluster-flink-state-PLACEHOLDER/flink-checkpoints/fluss-eks-cluster/
-    state.savepoints.dir: s3://fluss-eks-cluster-flink-state-PLACEHOLDER/flink-savepoints/fluss-eks-cluster/
-    execution.checkpointing.interval: 300000  # 5 minutes (300 seconds)
-    execution.checkpointing.mode: AT_LEAST_ONCE
-    execution.checkpointing.timeout: 600000  # 10 minutes
-    execution.checkpointing.max-concurrent-checkpoints: 1
-    execution.checkpointing.externalized-checkpoint-retention: RETAIN_ON_CANCELLATION
-    execution.checkpointing.min-pause: 5000  # 5 seconds minimum pause between checkpoints
+    # Checkpointing disabled
+    # execution.checkpointing.interval: disabled
+    # execution.checkpointing.mode: disabled
     
     # S3 Configuration - Force IRSA credential provider (matches reference config)
     fs.s3a.aws.credentials.provider: com.amazonaws.auth.WebIdentityTokenCredentialsProvider
@@ -74,4 +103,3 @@ data:
     # Logging
     taskmanager.log.path: /opt/flink/log
     jobmanager.log.path: /opt/flink/log
-

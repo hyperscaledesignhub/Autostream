@@ -1,10 +1,27 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 # Simplified Flink Job Submission
 # This approach uses a sidecar container with the demo image to submit the job
 apiVersion: batch/v1
 kind: Job
 metadata:
   name: flink-job-submitter
-  namespace: fluss
+  namespace: ${NAMESPACE}
   labels:
     app: flink-job-submission
 spec:
@@ -30,7 +47,7 @@ spec:
               MAX_ATTEMPTS=60
               ATTEMPT=0
               while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
-                if nc -zv -w 2 flink-jobmanager.fluss.svc.cluster.local 8081 2>&1 | grep -q "open\|succeeded"; then
+                if nc -zv -w 2 flink-jobmanager.${NAMESPACE}.svc.cluster.local 8081 2>&1 | grep -q "open\|succeeded"; then
                   echo "Flink JobManager is ready!"
                   exit 0
                 fi
@@ -48,7 +65,7 @@ spec:
             - -c
             - |
               echo "Waiting for Fluss coordinator to be ready..."
-              COORD_HOST="coordinator-server-hs.fluss.svc.cluster.local"
+              COORD_HOST="coordinator-server-hs.${NAMESPACE}.svc.cluster.local"
               # Check if the port is open using nc
               until nc -zv "$COORD_HOST" 9124 2>&1 | grep -q "open"; do
                 echo "Waiting for Fluss coordinator on port 9124..."
@@ -69,18 +86,18 @@ spec:
               exit 0
         # Copy JAR from demo image to shared volume
         - name: copy-jar
-          image: 343218179954.dkr.ecr.us-west-2.amazonaws.com/fluss-demo:latest
+          image: ${DEMO_IMAGE_REPO}:${DEMO_IMAGE_TAG}
           command:
             - sh
             - -c
             - |
               echo "Copying JAR file to shared volume..."
-              if [ -f /app/fluss-flink-realtime-demo.jar ]; then
-                cp /app/fluss-flink-realtime-demo.jar /shared/fluss-flink-realtime-demo.jar
+              if [ -f /opt/flink/usrlib/fluss-flink-realtime-demo.jar ]; then
+                cp /opt/flink/usrlib/fluss-flink-realtime-demo.jar /shared/fluss-flink-realtime-demo.jar
                 ls -lh /shared/
                 echo "JAR copied successfully"
               else
-                echo "ERROR: JAR file not found in /app/fluss-flink-realtime-demo.jar"
+                echo "ERROR: JAR file not found in /opt/flink/usrlib/fluss-flink-realtime-demo.jar"
                 exit 1
               fi
           volumeMounts:
@@ -109,7 +126,7 @@ spec:
                 echo "WARNING: Could not install jq, will use grep/sed instead"
               fi
               
-              JOBMANAGER="flink-jobmanager.fluss.svc.cluster.local:8081"
+              JOBMANAGER="flink-jobmanager.${NAMESPACE}.svc.cluster.local:8081"
               JAR_PATH="/shared/fluss-flink-realtime-demo.jar"
               
               # Check if JAR exists
@@ -153,8 +170,8 @@ spec:
                 "http://${JOBMANAGER}/v1/jars/${JAR_ID}/run" \
                 -H "Content-Type: application/json" \
                 -d '{
-                  "entryClass": "com.example.fluss.flink.FlinkSensorAggregatorJob",
-                  "programArgs": "--bootstrap coordinator-server-hs.fluss.svc.cluster.local:9124 --database iot --table sensor_readings --window-minutes 1",
+                  "entryClass": "org.apache.fluss.benchmarks.flink.FlinkSensorAggregatorJob",
+                  "programArgs": "--bootstrap coordinator-server-hs.${NAMESPACE}.svc.cluster.local:9124 --database iot --table sensor_readings --window-minutes 1",
                   "parallelism": 2,
                   "savepointPath": null,
                   "allowNonRestoredState": false

@@ -1,3 +1,20 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 #!/bin/bash
 set -e
 
@@ -63,7 +80,7 @@ if [ -n "${KUBERNETES_SERVICE_HOST:-}" ]; then
         "http://${JOBMANAGER}/v1/jars/${JAR_ID}/run" \
         -H "Content-Type: application/json" \
         -d '{
-            "entryClass": "com.example.fluss.flink.FlinkSensorAggregatorJob",
+            "entryClass": "org.apache.fluss.benchmarks.flink.FlinkSensorAggregatorJob",
             "programArgs": "--bootstrap coordinator-server-hs.fluss.svc.cluster.local:9124 --database iot --table sensor_readings --window-minutes 1",
             "parallelism": 2,
             "savepointPath": null,
@@ -106,7 +123,7 @@ else
     echo "  kubectl run flink-job-submitter --rm -it --image=curlimages/curl:latest --restart=Never -n ${NAMESPACE} -- sh"
     echo ""
     echo "Option 2: Use Flink CLI from JobManager pod"
-    echo "  kubectl exec -it -n ${NAMESPACE} \$(kubectl get pod -n ${NAMESPACE} -l app=flink-jobmanager -o jsonpath='{.items[0].metadata.name}') -- /opt/flink/bin/flink run -c com.example.fluss.flink.FlinkSensorAggregatorJob /path/to/jar"
+    echo "  kubectl exec -it -n ${NAMESPACE} \$(kubectl get pod -n ${NAMESPACE} -l app=flink-jobmanager -o jsonpath='{.items[0].metadata.name}') -- /opt/flink/bin/flink run -c org.apache.fluss.benchmarks.flink.FlinkSensorAggregatorJob /path/to/jar"
     echo ""
     echo "Option 3: Port-forward and use REST API"
     echo "  kubectl port-forward -n ${NAMESPACE} svc/flink-jobmanager 8081:8081"

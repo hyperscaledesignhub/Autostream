@@ -1,3 +1,21 @@
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+
 # Deployment Steps Guide
 
 This document describes the step-by-step deployment process for the Fluss high-infrastructure setup, starting from after Terraform infrastructure deployment.
@@ -90,15 +108,15 @@ kubectl wait --for=condition=ready pod -l app=flink,component=jobmanager -n flus
 
 ## Step 4: Deploy Multi-Instance Producer Job
 
-Deploy 8 producer instances (2 per node across 4 producer nodes) with 96 buckets:
+Deploy 8 producer instances (2 per node across 4 producer nodes) with 128 buckets:
 
 ### Option 1: Use Multi-Instance Script (Recommended)
 
 ```bash
 cd aws-deploy-fluss/high-infra/k8s/jobs
 
-# Deploy 8 producer instances with 96 buckets
-export BUCKETS=96
+# Deploy 8 producer instances with 128 buckets
+export BUCKETS=128
 ./deploy-producer-multi-instance.sh --wait
 ```
 
@@ -114,7 +132,7 @@ export BUCKETS=96
 - **Memory**: 4Gi request, 16Gi limit per instance
 - **CPU**: 2000m request, 8000m limit per instance
 - **Writer Threads**: 48 per instance
-- **Buckets**: 96 (must match table bucket count)
+- **Buckets**: 128 (must match table bucket count)
 
 **Customize if needed:**
 ```bash
@@ -130,7 +148,7 @@ export BUCKETS=96
 cd aws-deploy-fluss/high-infra/k8s/jobs
 
 # Deploy 8 producer instances with custom parameters
-export BUCKETS=96
+export BUCKETS=128
 export PRODUCER_RATE=250000
 export TOTAL_PRODUCERS=8
 ./deploy-producer-multi-instance.sh --wait
@@ -143,7 +161,7 @@ export TOTAL_PRODUCERS=8
 - **Total rate**: 2,000,000 records/second (8 instances × 250K)
 - **Flush**: Every 5,000 records (optimal for throughput)
 - **Batch Timeout**: 90ms (optimal for batching)
-- **Buckets**: 96 (must match table bucket count)
+- **Buckets**: 128 (must match table bucket count)
 - **Nodes**: Runs on `producer` node group (c5.2xlarge), 2 pods per node
 
 **Note**: See `k8s/jobs/PRODUCER_CONFIG.md` for detailed configuration options and performance tuning guidelines.
@@ -181,7 +199,7 @@ cd aws-deploy-fluss/high-infra/k8s/flink
 2. Verifies JAR exists in Flink image at `/opt/flink/usrlib/fluss-flink-realtime-demo.jar`
 3. Uploads JAR from the image's local filesystem to Flink cluster
 4. Submits job via REST API with:
-   - Entry class: `com.example.fluss.flink.FlinkSensorAggregatorJob`
+   - Entry class: `org.apache.fluss.benchmarks.flink.FlinkSensorAggregatorJob`
    - Parallelism: 32
    - Window: 1 minute
    - **Scan mode**: `latest` (reads from latest position, not from beginning)

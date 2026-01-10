@@ -1,3 +1,21 @@
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+
 # Fluss Writer / Table Scan Commands
 
 Working directory for all commands:
@@ -65,12 +83,12 @@ flink-1.20.3/bin/sql-client.sh -e "CREATE CATALOG fluss WITH ('type'='fluss','bo
 ### List databases / tables
 ```
 java -cp demos/demo/fluss_flink_realtime_demo/target/fluss-flink-realtime-demo.jar \
-  com.example.fluss.inspect.FlussMetadataInspector localhost:9123
+  org.apache.fluss.benchmarks.inspect.FlussMetadataInspector localhost:9123
 ```
 Optional single database:
 ```
 java -cp demos/demo/fluss_flink_realtime_demo/target/fluss-flink-realtime-demo.jar \
-  com.example.fluss.inspect.FlussMetadataInspector localhost:9123 iot
+  org.apache.fluss.benchmarks.inspect.FlussMetadataInspector localhost:9123 iot
 ```
 
 ### Peek change log records
@@ -78,7 +96,7 @@ java -cp demos/demo/fluss_flink_realtime_demo/target/fluss-flink-realtime-demo.j
 ```
 java --add-opens=java.base/java.nio=ALL-UNNAMED \
   -cp demos/demo/fluss_flink_realtime_demo/target/fluss-flink-realtime-demo.jar \
-  com.example.fluss.inspect.FlussTableLogPeek localhost:9123 iot sensor_readings 5
+  org.apache.fluss.benchmarks.inspect.FlussTableLogPeek localhost:9123 iot sensor_readings 5
 ```
 (Change `5` to print more/less records.)
 
@@ -87,7 +105,7 @@ java --add-opens=java.base/java.nio=ALL-UNNAMED \
 ```
 java --add-opens=java.base/java.nio=ALL-UNNAMED \
   -cp demos/demo/fluss_flink_realtime_demo/target/fluss-flink-realtime-demo.jar \
-  com.example.fluss.inspect.FlussPrimaryKeySnapshotPeek localhost:9123 iot sensor_readings 5
+  org.apache.fluss.benchmarks.inspect.FlussPrimaryKeySnapshotPeek localhost:9123 iot sensor_readings 5
 ```
 (Reads current table snapshot; only supports non-partitioned primary-key tables.)
 
@@ -96,7 +114,7 @@ java --add-opens=java.base/java.nio=ALL-UNNAMED \
 (Requires Flink cluster running in `flink-1.20.3`)
 ```
 flink-1.20.3/bin/flink run \
-  -c com.example.fluss.flink.FlinkSensorAggregatorJob \
+  -c org.apache.fluss.benchmarks.flink.FlinkSensorAggregatorJob \
   demos/demo/fluss_flink_realtime_demo/target/fluss-flink-realtime-demo.jar \
   --bootstrap localhost:9123 --database iot --table sensor_readings --window-minutes 1
 ```

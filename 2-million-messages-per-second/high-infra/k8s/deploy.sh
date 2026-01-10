@@ -1,3 +1,20 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 #!/bin/bash
 set -euo pipefail
 
@@ -99,9 +116,15 @@ fi
 
 # 4. Deploy Flink cluster
 echo "[4/8] Deploying Flink cluster..."
-kubectl apply -f "${K8S_DIR}/flink/flink-config.yaml"
-kubectl apply -f "${K8S_DIR}/flink/flink-jobmanager.yaml"
-kubectl apply -f "${K8S_DIR}/flink/flink-taskmanager.yaml"
+# Flink image is hardcoded to apache/flink:1.20.3-scala_2.12-java17
+# Use envsubst for namespace and DEMO_IMAGE_REPO/DEMO_IMAGE_TAG (for init container)
+# Create Flink service account first
+envsubst < "${K8S_DIR}/flink/flink-serviceaccount.yaml" | kubectl apply -f -
+# Apply ConfigMap with namespace substitution
+envsubst < "${K8S_DIR}/flink/flink-config.yaml" | kubectl apply -f -
+# Apply JobManager and TaskManager (namespace and DEMO_IMAGE_REPO/DEMO_IMAGE_TAG for init container)
+envsubst < "${K8S_DIR}/flink/flink-jobmanager.yaml" | kubectl apply -f -
+envsubst < "${K8S_DIR}/flink/flink-taskmanager.yaml" | kubectl apply -f -
 
 # 4.1. Update Flink ConfigMap with S3 checkpoint configuration
 echo "[4.1/9] Updating Flink ConfigMap with S3 checkpoint configuration..."

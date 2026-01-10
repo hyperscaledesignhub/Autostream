@@ -1,3 +1,21 @@
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+
 # Kubernetes Deployment for Fluss + Flink
 
 This directory contains Kubernetes YAML manifests for deploying Fluss, Flink, and related components.
@@ -83,7 +101,7 @@ Example:
 
 6. **Deploy jobs (with image substitution):**
    ```bash
-   export DEMO_IMAGE_REPOSITORY="<demo-image-repo>"
+   export DEMO_IMAGE_REPO="<demo-image-repo>"
    export DEMO_IMAGE_TAG="<demo-image-tag>"
    # Deploy producer job (standalone)
    envsubst < jobs/producer-job.yaml | kubectl apply -f -
@@ -114,7 +132,7 @@ To manually submit a job:
 
 ```bash
 # Method 1: Use the job submission job (recommended)
-export DEMO_IMAGE_REPOSITORY="<demo-image-repo>"
+export DEMO_IMAGE_REPO="<demo-image-repo>"
 export DEMO_IMAGE_TAG="<demo-image-tag>"
 envsubst < flink/flink-job-submission-simple.yaml | kubectl apply -f -
 
@@ -128,7 +146,7 @@ kubectl cp /path/to/fluss-flink-realtime-demo.jar $FLINK_JM_POD:/tmp/job.jar -n 
 kubectl exec -n fluss $FLINK_JM_POD -- \
   /opt/flink/bin/flink run \
   -m flink-jobmanager:6123 \
-  -c com.example.fluss.flink.FlinkSensorAggregatorJob \
+  -c org.apache.fluss.benchmarks.flink.FlinkSensorAggregatorJob \
   /tmp/job.jar \
   --bootstrap coordinator-server-hs.fluss.svc.cluster.local:9124 \
   --database iot \
@@ -150,7 +168,7 @@ curl -X POST \
   "http://${JOBMANAGER}/v1/jars/${JAR_ID}/run" \
   -H "Content-Type: application/json" \
   -d '{
-    "entryClass": "com.example.fluss.flink.FlinkSensorAggregatorJob",
+    "entryClass": "org.apache.fluss.benchmarks.flink.FlinkSensorAggregatorJob",
     "programArgs": "--bootstrap coordinator-server-hs.fluss.svc.cluster.local:9124 --database iot --table sensor_readings --window-minutes 1",
     "parallelism": 2
   }'

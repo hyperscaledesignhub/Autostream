@@ -1,3 +1,20 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 # ================================================================================
 # S3 BUCKET FOR FLINK CHECKPOINTS AND SAVEPOINTS
 # ================================================================================
@@ -8,6 +25,8 @@
 # S3 Bucket for Flink Checkpoints and Savepoints
 resource "aws_s3_bucket" "flink_state" {
   bucket = "${var.eks_cluster_name}-flink-state-${data.aws_caller_identity.current.account_id}"
+
+  force_destroy = true  # Allow terraform destroy to delete bucket even with objects/versions
 
   tags = {
     Name        = "${var.eks_cluster_name}-flink-state"
@@ -167,8 +186,35 @@ resource "aws_iam_role_policy_attachment" "flink_s3_access" {
   policy_arn = aws_iam_policy.flink_s3_access.arn
 }
 
+# Wait for EKS cluster to be fully ready before creating Kubernetes resources
+# This ensures the Kubernetes API is accessible before Terraform tries to connect
+resource "null_resource" "wait_for_cluster" {
+  depends_on = [module.eks.cluster_id]
+
+  provisioner "local-exec" {
+    command = <<-EOT
+      echo "Waiting for EKS cluster to be ready..."
+      aws eks wait cluster-active \
+        --name ${module.eks.cluster_name} \
+        --region ${var.aws_region} || true
+      echo "Cluster is ready"
+    EOT
+  }
+
+  triggers = {
+    cluster_id = module.eks.cluster_id
+  }
+}
+
 # Create namespace for Flink service account
+# Depends on EKS cluster being created and ready
 resource "kubernetes_namespace" "fluss" {
+  depends_on = [
+    module.eks.cluster_id,
+    module.eks.cluster_endpoint,
+    null_resource.wait_for_cluster  # Wait for cluster to be fully ready
+  ]
+
   metadata {
     name = var.namespace
     labels = {
