@@ -53,27 +53,15 @@ if [ ! -f "${K8S_DIR}/deploy.sh" ]; then
     exit 1
 fi
 
-# Run deployment script (but skip producer and Flink job submission)
-# We'll temporarily unset DEMO_IMAGE_REPO so deploy.sh skips producer deployment
+# Run deployment script (skip producer and Flink job submission)
 # Producer will be deployed separately in step 5
 echo "[2/2] Deploying ZooKeeper, Fluss, Flink cluster, and Monitoring..."
 cd "${K8S_DIR}"
 
-# Save DEMO_IMAGE_REPO value
-SAVED_DEMO_IMAGE_REPO="${DEMO_IMAGE_REPO:-}"
-
-# Temporarily unset DEMO_IMAGE_REPO to skip producer deployment in deploy.sh
-# Producer will be deployed separately in step 5
-unset DEMO_IMAGE_REPO
-
-# Call deploy.sh - it will skip producer deployment since DEMO_IMAGE_REPO is unset
+# Call deploy.sh - it will skip producer deployment since deploy.sh checks for DEMO_IMAGE_REPO
 # Flink cluster uses hardcoded image: apache/flink:1.20.3-scala_2.12-java17
-./deploy.sh "${NAMESPACE}" "" "${DEMO_IMAGE_TAG}" "${FLUSS_IMAGE_REPO}"
-
-# Restore DEMO_IMAGE_REPO for subsequent steps
-if [ -n "${SAVED_DEMO_IMAGE_REPO}" ]; then
-    export DEMO_IMAGE_REPO="${SAVED_DEMO_IMAGE_REPO}"
-fi
+# Pass DEMO_IMAGE_REPO so Flink init container can use it
+./deploy.sh "${NAMESPACE}" "${DEMO_IMAGE_REPO}" "${DEMO_IMAGE_TAG}" "${FLUSS_IMAGE_REPO}"
 
 # Wait for critical components to be ready
 echo ""

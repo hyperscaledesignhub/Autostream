@@ -187,71 +187,8 @@ helm upgrade --install prometheus prometheus-community/kube-prometheus-stack \
     --set alertmanager.enabled=false \
     --wait=false
 
-# 6. Create Fluss table and deploy multi-instance producer job
-echo "[6/9] Creating Fluss table and deploying multi-instance producer..."
-if [ -z "${DEMO_IMAGE_REPO}" ]; then
-    echo "WARNING: DEMO_IMAGE_REPO not set, skipping table creation and producer deployment"
-else
-    # Set default values for producer environment variables
-    export PRODUCER_RATE="${PRODUCER_RATE:-250000}"
-    export PRODUCER_FLUSH_EVERY="${PRODUCER_FLUSH_EVERY:-5000}"
-    export PRODUCER_STATS_EVERY="${PRODUCER_STATS_EVERY:-50000}"
-    export CLIENT_WRITER_BATCH_TIMEOUT="${CLIENT_WRITER_BATCH_TIMEOUT:-90ms}"
-    export CLIENT_WRITER_BUFFER_MEMORY_SIZE="${CLIENT_WRITER_BUFFER_MEMORY_SIZE:-2gb}"
-    export CLIENT_WRITER_BATCH_SIZE="${CLIENT_WRITER_BATCH_SIZE:-128mb}"
-    export PRODUCER_MEMORY_REQUEST="${PRODUCER_MEMORY_REQUEST:-4Gi}"
-    export PRODUCER_MEMORY_LIMIT="${PRODUCER_MEMORY_LIMIT:-16Gi}"
-    export PRODUCER_CPU_REQUEST="${PRODUCER_CPU_REQUEST:-2000m}"
-    export PRODUCER_CPU_LIMIT="${PRODUCER_CPU_LIMIT:-8000m}"
-    export BOOTSTRAP="${BOOTSTRAP:-coordinator-server-hs.fluss.svc.cluster.local:9124}"
-    export DATABASE="${DATABASE:-iot}"
-    export TABLE="${TABLE:-sensor_readings}"
-    export BUCKETS="${BUCKETS:-128}"
-    export TOTAL_PRODUCERS="${TOTAL_PRODUCERS:-8}"
-    export NUM_WRITER_THREADS="${NUM_WRITER_THREADS:-48}"
-    export DEMO_IMAGE_REPO="${DEMO_IMAGE_REPO}"
-    export DEMO_IMAGE_TAG="${DEMO_IMAGE_TAG}"
-    
-    # Ensure NAMESPACE is exported
-    export NAMESPACE
-    
-    # Step 6.1: Create table with 128 buckets
-    echo "[6.1/9] Creating Fluss table with ${BUCKETS} buckets..."
-    if [ -f "${K8S_DIR}/jobs/create-table.sh" ]; then
-        "${K8S_DIR}/jobs/create-table.sh" \
-            --namespace "${NAMESPACE}" \
-            --bootstrap "${BOOTSTRAP}" \
-            --database "${DATABASE}" \
-            --table "${TABLE}" \
-            --buckets "${BUCKETS}" \
-            --image-repo "${DEMO_IMAGE_REPO}" \
-            --image-tag "${DEMO_IMAGE_TAG}"
-        echo "  ✓ Table creation completed"
-    else
-        echo "  ERROR: create-table.sh not found at ${K8S_DIR}/jobs/create-table.sh"
-        exit 1
-    fi
-    
-    # Step 6.2: Deploy multi-instance producer (8 instances, 2 per node)
-    echo "[6.2/9] Deploying ${TOTAL_PRODUCERS} producer instances (multi-instance)..."
-    if [ -f "${K8S_DIR}/jobs/deploy-producer-multi-instance.sh" ]; then
-        # Export all variables needed by the multi-instance script
-        export NAMESPACE PRODUCER_RATE PRODUCER_FLUSH_EVERY PRODUCER_STATS_EVERY
-        export CLIENT_WRITER_BATCH_TIMEOUT CLIENT_WRITER_BUFFER_MEMORY_SIZE CLIENT_WRITER_BATCH_SIZE
-        export PRODUCER_MEMORY_REQUEST PRODUCER_MEMORY_LIMIT PRODUCER_CPU_REQUEST PRODUCER_CPU_LIMIT
-        export BOOTSTRAP DATABASE TABLE BUCKETS TOTAL_PRODUCERS NUM_WRITER_THREADS
-        export DEMO_IMAGE_REPO DEMO_IMAGE_TAG
-        
-        "${K8S_DIR}/jobs/deploy-producer-multi-instance.sh" --wait
-        echo "  ✓ Multi-instance producer deployment completed"
-    else
-        echo "  ERROR: deploy-producer-multi-instance.sh not found at ${K8S_DIR}/jobs/deploy-producer-multi-instance.sh"
-        exit 1
-    fi
-fi
-
-# 7. Deploy ServiceMonitors and PodMonitors for Prometheus
-echo "[7/9] Deploying ServiceMonitors and PodMonitors for Prometheus..."
+# 6. Deploy ServiceMonitors and PodMonitors for Prometheus
+echo "[6/8] Deploying ServiceMonitors and PodMonitors for Prometheus..."
 if [ -f "${K8S_DIR}/monitoring/servicemonitors.yaml" ]; then
 kubectl apply -f "${K8S_DIR}/monitoring/servicemonitors.yaml"
     echo "  ✓ ServiceMonitors deployed"
@@ -265,8 +202,8 @@ else
     echo "  WARNING: podmonitors.yaml not found, skipping..."
 fi
 
-# 8. Deploy Grafana dashboard (if exists)
-echo "[8/9] Deploying Grafana dashboard..."
+# 7. Deploy Grafana dashboard (if exists)
+echo "[7/8] Deploying Grafana dashboard..."
 if [ -f "${K8S_DIR}/monitoring/grafana-dashboard.yaml" ]; then
     kubectl apply -f "${K8S_DIR}/monitoring/grafana-dashboard.yaml"
     echo "  ✓ Grafana dashboard ConfigMap deployed"
@@ -316,8 +253,8 @@ else
     echo "  No Grafana dashboard YAML found, skipping..."
 fi
 
-# 9. Wait for components to be ready
-echo "[9/9] Waiting for components to be ready..."
+# 8. Wait for components to be ready
+echo "[8/8] Waiting for components to be ready..."
 echo "  Waiting for Flink JobManager..."
 kubectl wait --for=condition=ready pod -l app=flink,component=jobmanager -n ${NAMESPACE} --timeout=300s || true
 echo "  Waiting for Flink TaskManagers..."
