@@ -3,11 +3,11 @@
 *.tfstate.*
 .terraform/
 .terraform.lock.hcl
-terraform.tfvars
-*.tfvars.backup
+# terraform.tfvars - commented out to allow tracking mandatory terraform.tfvars
+# *.tfvars.backup
 
 # Helm charts (downloaded)
-helm-charts/fluss/
+# helm-charts/fluss/ - commented out to allow tracking mandatory helm charts
 
 # IDE
 .idea/
